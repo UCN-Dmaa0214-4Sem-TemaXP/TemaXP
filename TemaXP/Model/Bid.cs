@@ -11,6 +11,6 @@ namespace TemaXP.Model
         public DateTime DateTime { get; set; }
         public Member Member { get; set; }
         public decimal BidAmount { get; set; }
-        public Art Art { get; set; }
+        public virtual Art Art { get; set; }
     }
 }

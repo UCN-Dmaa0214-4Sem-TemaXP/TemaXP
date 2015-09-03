@@ -11,6 +11,6 @@ namespace TemaXP.Model
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public string Description { get; set; }
-        public List<Art> Arts { get; set; }
+        public virtual List<Art> Arts { get; set; }
     }
 }

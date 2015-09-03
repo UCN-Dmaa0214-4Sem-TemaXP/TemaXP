@@ -18,7 +18,7 @@ namespace TemaXP.Model
         public string Image { get; set; }
         public decimal StartingBid { get; set; }
         public decimal PurchasePrice { get; set; }
-        public List<Bid> Bids { get; set; } 
+        public virtual List<Bid> Bids { get; set; } 
 
 
     }

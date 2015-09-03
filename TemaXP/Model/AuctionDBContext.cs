@@ -14,10 +14,10 @@ namespace TemaXP.Model
             
         }
 
-        public DbSet<Art> Arts { get; set; }
-        public DbSet<Auction> Auktions { get; set; }
-        public DbSet<Member> Members { get; set; }
-        public DbSet<Bid> Bids { get; set; }
+        public virtual DbSet<Art> Arts { get; set; }
+        public virtual DbSet<Auction> Auktions { get; set; }
+        public virtual DbSet<Member> Members { get; set; }
+        public virtual DbSet<Bid> Bids { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
