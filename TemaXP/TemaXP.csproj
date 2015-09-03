@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C1F54A38-A270-40C9-BEFA-99CA13E174B5}</ProjectGuid>
+    <ProjectGuid>{58E2E2C0-803E-465B-B3DC-144C85E619D4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TemaXP</RootNamespace>
