@@ -1,5 +1,5 @@
 # TemaXP
 
 rlgk.cloudapp.net
-#temaxp_user
-#Biksemad!
+temaxp_user
+Biksemad!
