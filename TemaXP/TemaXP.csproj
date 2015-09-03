@@ -65,7 +65,7 @@
     </Compile>
     <Compile Include="Model\Art.cs" />
     <Compile Include="Model\Auction.cs" />
-    <Compile Include="Model\AuktionDBContext.cs" />
+    <Compile Include="Model\AuctionDBContext.cs" />
     <Compile Include="Model\Bid.cs" />
     <Compile Include="Model\Mapping\ArtMap.cs" />
     <Compile Include="Model\Mapping\AuctionMap.cs" />
