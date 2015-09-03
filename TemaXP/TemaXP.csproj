@@ -63,6 +63,7 @@
     <Compile Include="GUI\ShowImageForm.Designer.cs">
       <DependentUpon>ShowImageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Art.cs" />
     <Compile Include="Model\Auction.cs" />
     <Compile Include="Model\AuctionDBContext.cs" />
