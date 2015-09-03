@@ -1,5 +1,5 @@
 # TemaXP
 
-rlgk.cloudapp.net
-temaxp_user
-Biksemad!
+1. 'rlgk.cloudapp.net'
+2. 'temaxp_user'
+3. 'Biksemad!'
