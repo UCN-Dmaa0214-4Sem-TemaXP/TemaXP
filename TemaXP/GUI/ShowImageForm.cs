@@ -8,10 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TemaXP {
-    public partial class Form1 : Form {
-        public Form1() {
+namespace TemaXP.GUI {
+    public partial class ShowImageForm : Form {
+        
+        public ShowImageForm(string url) {
             InitializeComponent();
+            pictureBox1.ImageLocation = url;
+
+           // pictureBox1.SizeMode = SizeMode.Stretch;
         }
     }
 }
