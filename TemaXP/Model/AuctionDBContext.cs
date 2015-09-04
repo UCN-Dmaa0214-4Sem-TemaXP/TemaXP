@@ -21,7 +21,7 @@ namespace TemaXP.Model
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-
+            
             modelBuilder.Configurations.Add(new ArtMap());
             modelBuilder.Configurations.Add(new AuctionMap());
             modelBuilder.Configurations.Add(new MemberMap());

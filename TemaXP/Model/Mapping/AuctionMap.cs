@@ -15,6 +15,7 @@ namespace TemaXP.Model.Mapping
             this.HasKey(x => x.Id);
             this.Property(x => x.Description).HasMaxLength(300);
             this.HasMany(x => x.Arts);
+            
         }
     }
 }

@@ -18,6 +18,7 @@ namespace TemaXP.Model.Mapping
             this.Property(x => x.Name).HasMaxLength(200);
             this.Property(x => x.Image).HasMaxLength(100);
             this.HasMany(x => x.Bids);
+            
 
         }
     }
