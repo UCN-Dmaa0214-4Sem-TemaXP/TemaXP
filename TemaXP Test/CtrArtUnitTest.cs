@@ -29,10 +29,10 @@ namespace TemaXP_Test
         }
 
         [TestMethod]
-        public void TestCreateArt()
+        public void TestCreateAndInsertArt()
         {
             Console.Out.WriteLine("TestCreateArt called");
-            Art aTemp = ctrArt.Create("Hej", "Dav", "Fin kunst", "asdasads", 450, 450);
+            Art aTemp = ctrArt.CreateAndInsert("Hej", "Dav", "Fin kunst", "asdasads", 450, 450);
             Assert.IsNotNull(aTemp, "Is not null");
 
             Assert.IsTrue(0 < aTemp.Id, "Is is greater than 0");
