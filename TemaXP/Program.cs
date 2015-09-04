@@ -5,13 +5,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TemaXP.Model;
 
-namespace TemaXP {
-    static class Program {
+namespace TemaXP
+{
+    static class Program
+    {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main() {
+        static void Main()
+        {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ArtForm());

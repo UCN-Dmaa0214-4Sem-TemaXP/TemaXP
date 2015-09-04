@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CtrArt.cs" />
     <Compile Include="GUI\ArtForm.cs">
       <SubType>Form</SubType>
     </Compile>
