@@ -42,8 +42,8 @@
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtImgUrl = new System.Windows.Forms.TextBox();
             this.btnShowImg = new System.Windows.Forms.Button();
+            this.txtImgUrl = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -273,15 +273,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(121, 27);
             this.tableLayoutPanel3.TabIndex = 16;
             // 
-            // txtImgUrl
-            // 
-            this.txtImgUrl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtImgUrl.Location = new System.Drawing.Point(3, 3);
-            this.txtImgUrl.Name = "txtImgUrl";
-            this.txtImgUrl.Size = new System.Drawing.Size(79, 20);
-            this.txtImgUrl.TabIndex = 2;
-            // 
             // btnShowImg
             // 
             this.btnShowImg.Location = new System.Drawing.Point(88, 3);
@@ -291,6 +282,15 @@
             this.btnShowImg.Text = "Vis";
             this.btnShowImg.UseVisualStyleBackColor = true;
             this.btnShowImg.Click += new System.EventHandler(this.btnShowImg_Click);
+            // 
+            // txtImgUrl
+            // 
+            this.txtImgUrl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtImgUrl.Location = new System.Drawing.Point(3, 3);
+            this.txtImgUrl.Name = "txtImgUrl";
+            this.txtImgUrl.Size = new System.Drawing.Size(79, 20);
+            this.txtImgUrl.TabIndex = 2;
             // 
             // tableLayoutPanel4
             // 
