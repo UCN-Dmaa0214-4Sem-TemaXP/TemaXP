@@ -61,5 +61,11 @@ namespace TemaXP_Test
             Console.WriteLine("TestUpdateArt called");
 
         }
+
+        [TestMethod]
+        public void TestSetNumber() {
+            int? number = ctrArt.SetArtNumber();
+            
+        }
     }
 }

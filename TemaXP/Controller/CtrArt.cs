@@ -119,5 +119,23 @@ namespace TemaXP.Controller
                 db.SaveChanges();
             }
         }
+
+        public int? SetArtNumber()
+        {
+
+            int? currentNumber;
+            int? newNumber;
+            using (AuctionDBContext db = new AuctionDBContext())
+            {
+
+                currentNumber = db.Arts.Max(x => (int?)x.Number);
+                if (currentNumber == null)
+                {
+                    newNumber = 1000;
+                }
+                newNumber = currentNumber + 10;
+                return newNumber;
+            }
+        }
     }
 }

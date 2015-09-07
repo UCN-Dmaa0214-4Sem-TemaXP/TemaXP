@@ -43,5 +43,23 @@ namespace TemaXP_Test
             Assert.IsNotNull(auction.Arts, "Art list is set");
            // ctrAuction.DeleteAuction(auction);
         }
+
+        [TestMethod]
+        public void TestUpdateAuction() {
+
+            Auction auction = ctrAuction.RetriveById(1);
+            auction.Description = "Update test description";
+            auction.Date = new DateTime();
+            
+            ctrAuction.UpdateAuction(auction);
+
+        }
+
+        [TestMethod]
+        public void TestRetriveById() {
+
+            Auction auction = ctrAuction.RetriveById(1);
+            Assert.IsNotNull(auction, "auction is found");
+        }
     }
 }
