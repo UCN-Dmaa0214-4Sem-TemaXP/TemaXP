@@ -11,18 +11,25 @@ namespace TemaXP.Controller
     public class CtrAuction
     {
 
-        public void CreateAuction(Auction auction) {
+        public Auction CreateAuction(DateTime date, string description, List<Art> arts) {
 
-            if (auction == null)
-                throw new NullReferenceException("auction");
-
+            Auction auction = new Auction()
+            {
+                Date = date,
+                Description = description,
+                Arts = arts
+            };
             using (AuctionDBContext db = new AuctionDBContext()) {
+
+                foreach (var art in arts) {
+                    db.Arts.Attach(art);
+                }
 
                 db.Auktions.Add(auction);
                 db.DebugDetectChanges();
                 db.SaveChanges();
-            }   
-           
+            }
+            return auction;
         }
 
         public void DeleteAuction(Auction auction) {

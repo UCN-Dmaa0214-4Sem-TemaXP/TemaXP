@@ -35,20 +35,13 @@ namespace TemaXP_Test
             Art art = artCtr.RetrieveById(1);
             List<Art> artList = new List<Art>();
             artList.Add(art);
-            Auction auction = new Auction()
-            {
-                Date = DateTime.Now,
-                Description = "This is the description",
-                Arts = artList
-            };
-            auction.AddArt(art);
-
-            ctrAuction.CreateAuction(auction);
+          
+            Auction auction = ctrAuction.CreateAuction(DateTime.Now, "Test description", artList );
 
             Assert.IsNotNull(auction.Date, "Date created");
             Assert.IsTrue(0 < auction.Description.Length, "Description is set");
-           // Assert.IsNotNull(auction.Arts, "Art list is set");
-            ctrAuction.DeleteAuction(auction);
+            Assert.IsNotNull(auction.Arts, "Art list is set");
+           // ctrAuction.DeleteAuction(auction);
         }
     }
 }

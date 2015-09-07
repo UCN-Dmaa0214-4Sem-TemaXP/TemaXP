@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -112,6 +113,8 @@ namespace TemaXP.Controller
             if(art == null)
                 throw new ArgumentNullException("art");
             using (AuctionDBContext db = new AuctionDBContext()) {
+                db.Arts.Attach(art);
+                db.Entry(art).State = EntityState.Deleted;
                 db.Arts.Remove(art);
                 db.SaveChanges();
             }
