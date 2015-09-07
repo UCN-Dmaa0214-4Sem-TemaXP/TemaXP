@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\CtrArt.cs" />
+<<<<<<< HEAD
     <Compile Include="GUI\ArtTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -68,16 +69,20 @@
       <DependentUpon>AuctionTab.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Extensions\ShowImageForm.cs">
+=======
+    <Compile Include="Controller\CtrAuction.cs" />
+    <Compile Include="GUI\ArtForm.cs">
+>>>>>>> origin/master
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Extensions\ShowImageForm.Designer.cs">
+    <Compile Include="GUI\ArtForm.Designer.cs">
+      <DependentUpon>ArtForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ShowImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ShowImageForm.Designer.cs">
       <DependentUpon>ShowImageForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201509040740203_InitialCreate.cs" />
     <Compile Include="Migrations\201509040740203_InitialCreate.Designer.cs">
@@ -99,17 +104,18 @@
     <Compile Include="Model\Member.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\ArtTab.resx">
-      <DependentUpon>ArtTab.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\ArtForm.resx">
+      <DependentUpon>ArtForm.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="GUI\AuctionTab.resx">
       <DependentUpon>AuctionTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Extensions\ShowImageForm.resx">
+=======
+    <EmbeddedResource Include="GUI\ShowImageForm.resx">
+>>>>>>> origin/master
       <DependentUpon>ShowImageForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201509040740203_InitialCreate.resx">
       <DependentUpon>201509040740203_InitialCreate.cs</DependentUpon>

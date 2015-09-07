@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -104,6 +105,16 @@ namespace TemaXP.Controller
         public List<Art> RetrieveAll()
         {
             return null;
+        }
+
+        public void DeleteArt(Art art) {
+            
+            if(art == null)
+                throw new ArgumentNullException("art");
+            using (AuctionDBContext db = new AuctionDBContext()) {
+                db.Arts.Remove(art);
+                db.SaveChanges();
+            }
         }
     }
 }
