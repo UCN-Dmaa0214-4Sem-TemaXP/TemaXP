@@ -15,6 +15,8 @@ namespace TemaXP.Migrations
 
         protected override void Seed(TemaXP.Model.AuctionDBContext context)
         {
+            context.Database.ExecuteSqlCommand("ALTER TABLE dbo.Arts DROP CONSTRAINT [FK_dbo.Arts_dbo.Auctions_Auction_Id];");
+            context.Database.ExecuteSqlCommand("ALTER TABLE dbo.Arts ADD CONSTRAINT [FK_dbo.Arts_dbo.Auctions_Auction_Id] FOREIGN KEY (Auction_Id) REFERENCES dbo.Auctions(Id) ON UPDATE NO ACTION ON DELETE SET NULL;");
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
