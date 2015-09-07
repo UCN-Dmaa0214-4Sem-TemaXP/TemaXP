@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TemaXP.GUI;
 using TemaXP.Model;
 
 namespace TemaXP
@@ -17,7 +18,7 @@ namespace TemaXP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ArtForm());
+            Application.Run(new MainForm());
 
             //using (AuctionDBContext db = new AuctionDBContext())
             //{
