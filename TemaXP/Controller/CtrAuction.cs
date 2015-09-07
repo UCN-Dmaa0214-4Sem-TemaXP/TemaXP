@@ -19,6 +19,7 @@ namespace TemaXP.Controller
             using (AuctionDBContext db = new AuctionDBContext()) {
 
                 db.Auktions.Add(auction);
+                db.DebugDetectChanges();
                 db.SaveChanges();
             }   
            
