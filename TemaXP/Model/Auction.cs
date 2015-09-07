@@ -12,5 +12,12 @@ namespace TemaXP.Model
         public DateTime Date { get; set; }
         public string Description { get; set; }
         public virtual List<Art> Arts { get; set; }
+
+
+        public void AddArt(Art art) {
+            if (art == null)
+                throw new ArgumentNullException("art");
+            Arts.Add(art);         
+        }
     }
 }

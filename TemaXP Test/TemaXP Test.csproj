@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="CtrArtUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CtrAuktionTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TemaXP\TemaXP.csproj">

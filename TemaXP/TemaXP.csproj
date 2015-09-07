@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\CtrArt.cs" />
+    <Compile Include="Controller\CtrAuction.cs" />
     <Compile Include="GUI\ArtForm.cs">
       <SubType>Form</SubType>
     </Compile>
