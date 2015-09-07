@@ -40,11 +40,18 @@
             this.btnMoveToLeft = new System.Windows.Forms.Button();
             this.btnMoveToRight = new System.Windows.Forms.Button();
             this.lbxAvailableArt = new System.Windows.Forms.ListBox();
+            this.grbUpcoming = new System.Windows.Forms.GroupBox();
+            this.grbEnded = new System.Windows.Forms.GroupBox();
+            this.lbxUpcoming = new System.Windows.Forms.ListBox();
+            this.lbxEnded = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.grbCreate.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.grbUpcoming.SuspendLayout();
+            this.grbEnded.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -66,12 +73,16 @@
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.grbUpcoming, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.grbEnded, 0, 2);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(398, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowCount = 3;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(389, 330);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 217F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(389, 401);
             this.tableLayoutPanel4.TabIndex = 3;
             // 
             // grbCreate
@@ -237,6 +248,46 @@
             this.lbxAvailableArt.Size = new System.Drawing.Size(130, 235);
             this.lbxAvailableArt.TabIndex = 1;
             // 
+            // grbUpcoming
+            // 
+            this.grbUpcoming.Controls.Add(this.lbxUpcoming);
+            this.grbUpcoming.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grbUpcoming.Location = new System.Drawing.Point(3, 3);
+            this.grbUpcoming.Name = "grbUpcoming";
+            this.grbUpcoming.Size = new System.Drawing.Size(383, 178);
+            this.grbUpcoming.TabIndex = 0;
+            this.grbUpcoming.TabStop = false;
+            this.grbUpcoming.Text = "Kommende Auktioner";
+            // 
+            // grbEnded
+            // 
+            this.grbEnded.Controls.Add(this.lbxEnded);
+            this.grbEnded.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grbEnded.Location = new System.Drawing.Point(3, 187);
+            this.grbEnded.Name = "grbEnded";
+            this.grbEnded.Size = new System.Drawing.Size(383, 211);
+            this.grbEnded.TabIndex = 1;
+            this.grbEnded.TabStop = false;
+            this.grbEnded.Text = "Afsluttede Auktioner";
+            // 
+            // lbxUpcoming
+            // 
+            this.lbxUpcoming.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbxUpcoming.FormattingEnabled = true;
+            this.lbxUpcoming.Location = new System.Drawing.Point(3, 16);
+            this.lbxUpcoming.Name = "lbxUpcoming";
+            this.lbxUpcoming.Size = new System.Drawing.Size(377, 159);
+            this.lbxUpcoming.TabIndex = 0;
+            // 
+            // lbxEnded
+            // 
+            this.lbxEnded.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbxEnded.FormattingEnabled = true;
+            this.lbxEnded.Location = new System.Drawing.Point(3, 16);
+            this.lbxEnded.Name = "lbxEnded";
+            this.lbxEnded.Size = new System.Drawing.Size(377, 192);
+            this.lbxEnded.TabIndex = 1;
+            // 
             // AuctionTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,11 +296,14 @@
             this.Name = "AuctionTab";
             this.Size = new System.Drawing.Size(790, 407);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
             this.grbCreate.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.grbUpcoming.ResumeLayout(false);
+            this.grbEnded.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -273,5 +327,9 @@
         private System.Windows.Forms.Button btnMoveToLeft;
         private System.Windows.Forms.Button btnMoveToRight;
         private System.Windows.Forms.ListBox lbxAvailableArt;
+        private System.Windows.Forms.GroupBox grbUpcoming;
+        private System.Windows.Forms.ListBox lbxUpcoming;
+        private System.Windows.Forms.GroupBox grbEnded;
+        private System.Windows.Forms.ListBox lbxEnded;
     }
 }
