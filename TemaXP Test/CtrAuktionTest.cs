@@ -41,7 +41,7 @@ namespace TemaXP_Test
                 Description = "This is the description",
                 Arts = artList
             };
-          //  auction.AddArt(art);
+            auction.AddArt(art);
 
             ctrAuction.CreateAuction(auction);
 

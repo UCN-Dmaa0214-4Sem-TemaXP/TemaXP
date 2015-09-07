@@ -56,11 +56,11 @@ namespace TemaXP.Model
         public void DebugDetectChanges() {
             ChangeTracker.DetectChanges();
             var list = ChangeTracker.Entries().ToList();
-            Debug.WriteLine("Start of DetectChanges");
+            Trace.WriteLine("Start of DetectChanges");
             foreach (var v in list) {
-                Debug.WriteLine("c: #" + list.IndexOf(v) + " - " + v.Entity + " state: " + v.State);
+                Trace.WriteLine("c: #" + list.IndexOf(v) + " - " + v.Entity + " state: " + v.State);
             }
-            Debug.WriteLine("End of DetectChanges");
+            Trace.WriteLine("End of DetectChanges");
 
         }
 
