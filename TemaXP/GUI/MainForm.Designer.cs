@@ -24,14 +24,16 @@
         /// </summary>
         private void InitializeComponent() {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabArt = new System.Windows.Forms.TabPage();
             this.tabAuction = new System.Windows.Forms.TabPage();
-            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.artTab1 = new TemaXP.GUI.ArtTab();
+            this.auctionTab1 = new TemaXP.GUI.AuctionTab();
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabArt.SuspendLayout();
+            this.tabAuction.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -43,6 +45,12 @@
             this.menuStrip1.Size = new System.Drawing.Size(818, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // menuToolStripMenuItem
+            // 
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.menuToolStripMenuItem.Text = "Menu";
             // 
             // tabControl
             // 
@@ -68,6 +76,7 @@
             // 
             // tabAuction
             // 
+            this.tabAuction.Controls.Add(this.auctionTab1);
             this.tabAuction.Location = new System.Drawing.Point(4, 22);
             this.tabAuction.Name = "tabAuction";
             this.tabAuction.Padding = new System.Windows.Forms.Padding(3);
@@ -76,12 +85,6 @@
             this.tabAuction.Text = "Auktion";
             this.tabAuction.UseVisualStyleBackColor = true;
             // 
-            // menuToolStripMenuItem
-            // 
-            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.menuToolStripMenuItem.Text = "Menu";
-            // 
             // artTab1
             // 
             this.artTab1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -89,6 +92,14 @@
             this.artTab1.Name = "artTab1";
             this.artTab1.Size = new System.Drawing.Size(804, 316);
             this.artTab1.TabIndex = 0;
+            // 
+            // auctionTab1
+            // 
+            this.auctionTab1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.auctionTab1.Location = new System.Drawing.Point(3, 3);
+            this.auctionTab1.Name = "auctionTab1";
+            this.auctionTab1.Size = new System.Drawing.Size(804, 316);
+            this.auctionTab1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -104,6 +115,7 @@
             this.menuStrip1.PerformLayout();
             this.tabControl.ResumeLayout(false);
             this.tabArt.ResumeLayout(false);
+            this.tabAuction.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,5 +129,6 @@
         private System.Windows.Forms.TabPage tabAuction;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private ArtTab artTab1;
+        private AuctionTab auctionTab1;
     }
 }

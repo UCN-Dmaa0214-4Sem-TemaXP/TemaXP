@@ -61,6 +61,12 @@
     <Compile Include="GUI\ArtTab.Designer.cs">
       <DependentUpon>ArtTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\AuctionTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\AuctionTab.Designer.cs">
+      <DependentUpon>AuctionTab.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Extensions\ShowImageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\ArtTab.resx">
       <DependentUpon>ArtTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AuctionTab.resx">
+      <DependentUpon>AuctionTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Extensions\ShowImageForm.resx">
       <DependentUpon>ShowImageForm.cs</DependentUpon>
