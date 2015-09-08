@@ -13,5 +13,10 @@ namespace TemaXP.GUI {
         public MainForm() {
             InitializeComponent();
         }
+
+        private void tabControl_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+           
+        }
     }
 }

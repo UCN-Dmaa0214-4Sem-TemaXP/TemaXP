@@ -27,8 +27,8 @@
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabArt = new System.Windows.Forms.TabPage();
-            this.tabAuction = new System.Windows.Forms.TabPage();
             this.artTab1 = new TemaXP.GUI.ArtTab();
+            this.tabAuction = new System.Windows.Forms.TabPage();
             this.auctionTab1 = new TemaXP.GUI.AuctionTab();
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -42,14 +42,15 @@
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(818, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1091, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
             // tabControl
@@ -57,58 +58,65 @@
             this.tabControl.Controls.Add(this.tabArt);
             this.tabControl.Controls.Add(this.tabAuction);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl.Location = new System.Drawing.Point(0, 24);
+            this.tabControl.Location = new System.Drawing.Point(0, 28);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(818, 348);
+            this.tabControl.Size = new System.Drawing.Size(1091, 430);
             this.tabControl.TabIndex = 1;
+            this.tabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl_Selecting);
             // 
             // tabArt
             // 
             this.tabArt.Controls.Add(this.artTab1);
-            this.tabArt.Location = new System.Drawing.Point(4, 22);
+            this.tabArt.Location = new System.Drawing.Point(4, 25);
+            this.tabArt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabArt.Name = "tabArt";
-            this.tabArt.Padding = new System.Windows.Forms.Padding(3);
-            this.tabArt.Size = new System.Drawing.Size(810, 322);
+            this.tabArt.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabArt.Size = new System.Drawing.Size(1083, 401);
             this.tabArt.TabIndex = 0;
             this.tabArt.Text = "Kunst";
             this.tabArt.UseVisualStyleBackColor = true;
             // 
+            // artTab1
+            // 
+            this.artTab1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.artTab1.Location = new System.Drawing.Point(4, 4);
+            this.artTab1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.artTab1.Name = "artTab1";
+            this.artTab1.Size = new System.Drawing.Size(1075, 393);
+            this.artTab1.TabIndex = 0;
+            // 
             // tabAuction
             // 
             this.tabAuction.Controls.Add(this.auctionTab1);
-            this.tabAuction.Location = new System.Drawing.Point(4, 22);
+            this.tabAuction.Location = new System.Drawing.Point(4, 25);
+            this.tabAuction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabAuction.Name = "tabAuction";
-            this.tabAuction.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAuction.Size = new System.Drawing.Size(810, 322);
+            this.tabAuction.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAuction.Size = new System.Drawing.Size(1083, 401);
             this.tabAuction.TabIndex = 1;
             this.tabAuction.Text = "Auktion";
             this.tabAuction.UseVisualStyleBackColor = true;
             // 
-            // artTab1
-            // 
-            this.artTab1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.artTab1.Location = new System.Drawing.Point(3, 3);
-            this.artTab1.Name = "artTab1";
-            this.artTab1.Size = new System.Drawing.Size(804, 316);
-            this.artTab1.TabIndex = 0;
-            // 
             // auctionTab1
             // 
             this.auctionTab1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.auctionTab1.Location = new System.Drawing.Point(3, 3);
+            this.auctionTab1.Location = new System.Drawing.Point(4, 4);
+            this.auctionTab1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.auctionTab1.Name = "auctionTab1";
-            this.auctionTab1.Size = new System.Drawing.Size(804, 316);
+            this.auctionTab1.Size = new System.Drawing.Size(1075, 393);
             this.auctionTab1.TabIndex = 0;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 372);
+            this.ClientSize = new System.Drawing.Size(1091, 458);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.Text = "UCN Kunstklub";
             this.menuStrip1.ResumeLayout(false);

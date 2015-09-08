@@ -7,12 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TemaXP.Controller;
+using TemaXP.Model;
 
 namespace TemaXP.GUI {
     public partial class ArtTab : UserControl {
         public ArtTab() {
             InitializeComponent();
             cmbSort.SelectedIndex = 0;
+            CtrArt ctrArt = new CtrArt();
+            List<Art> artList = ctrArt.RetrieveAll();
+            dgvAtrList.DataSource = artList;
         }
 
         private void SetHeaderText(bool clear) {
@@ -30,6 +35,11 @@ namespace TemaXP.GUI {
             using (var dialog = new ShowImageForm(txtImgUrl.Text)) {
                 dialog.ShowDialog();
             }
+        }
+
+        private void dgvAtrList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Art selectedArt = (Art)dgvAtrList.CurrentRow.DataBoundItem;
         }
 
     }
