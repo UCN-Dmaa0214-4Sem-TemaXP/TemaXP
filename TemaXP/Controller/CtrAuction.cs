@@ -59,38 +59,31 @@ namespace TemaXP.Controller {
             using (AuctionDBContext db = new AuctionDBContext()) {
                 try {
                     var artsInDb = db.Arts.Where(x => x.AuctionId == auction.Id).ToList();
-
-                    foreach (var artId in auction.Arts.Select(x => x.Id)) {
-                        var tempObj = artsInDb.SingleOrDefault(x => x.Id == artId);
-                        if (tempObj != null) {
-                            artsInDb.Remove(tempObj);
-                        }
-                    }
-
                     foreach (var art in artsInDb) {
-                        db.Entry(art).Entity.AuctionId = null;
+                        art.AuctionId = null;
                         db.Entry(art).State = EntityState.Modified;
                     }
 
+                    var artsInDbIds = artsInDb.Select(x => x.Id);
+
                     foreach (var art in auction.Arts) {
-                        //art.AuctionId = auction.Id;
-                        //db.Arts.Attach(art);
-                        //db.Entry(art).State = EntityState.Modified;
+                        art.AuctionId = auction.Id;
+                        if (!artsInDbIds.Contains(art.Id)) {
+                            db.Entry(art).State = EntityState.Modified;
+                        } else {
+                            var tempObj = db.ChangeTracker.Entries<Art>().Single(x => x.Entity.Id == art.Id);
+                            tempObj.Entity.AuctionId = auction.Id;
+                        }
                     }
-                    //db.Auktions.Attach(auction);
-
-                    //db.Entry(auction).State = EntityState.Modified;
-                    foreach (var art in auction.Arts) {
-                        //db.Entry(art).State = EntityState.Modified;
-                    }
-                    foreach (var art in db.ChangeTracker.Entries<Art>()) {
-                        art.Entity.AuctionId = auction.Id;
-                        art.State = EntityState.Modified;
-                    }
-
-
+                    
+                    var artsList = auction.Arts;
+                    auction.Arts = null;
+                    
+                    db.Entry(auction).State = EntityState.Modified;
+                    
                     db.DebugDetectChanges();
                     db.SaveChanges();
+                    auction.Arts = artsList;
                 } catch (UpdateException) {
 
                 }
