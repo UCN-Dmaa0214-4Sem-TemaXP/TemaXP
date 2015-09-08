@@ -69,6 +69,12 @@
     <Compile Include="GUI\AuctionTab.Designer.cs">
       <DependentUpon>AuctionTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Extensions\AuctionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Extensions\AuctionForm.Designer.cs">
+      <DependentUpon>AuctionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Extensions\ShowImageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\AuctionTab.resx">
       <DependentUpon>AuctionTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Extensions\AuctionForm.resx">
+      <DependentUpon>AuctionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Extensions\ShowImageForm.resx">
       <DependentUpon>ShowImageForm.cs</DependentUpon>

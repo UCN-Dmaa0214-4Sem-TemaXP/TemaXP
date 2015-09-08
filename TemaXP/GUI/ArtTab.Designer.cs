@@ -28,7 +28,6 @@
             this.grbCreate = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.lblNo = new System.Windows.Forms.Label();
             this.txtNumber = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
@@ -45,53 +44,51 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnShowImg = new System.Windows.Forms.Button();
             this.txtImgUrl = new System.Windows.Forms.TextBox();
+            this.lblNo = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvAtrList = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.cmbSort = new System.Windows.Forms.ComboBox();
-            this.lblSort = new System.Windows.Forms.Label();
-            this.artBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artistDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmbSort = new System.Windows.Forms.ComboBox();
+            this.lblSort = new System.Windows.Forms.Label();
+            this.artBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.grbCreate.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAtrList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artBindingSource1)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.artBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 267F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.grbCreate, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(805, 414);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(604, 336);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // grbCreate
             // 
             this.grbCreate.Controls.Add(this.tableLayoutPanel2);
             this.grbCreate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grbCreate.Location = new System.Drawing.Point(4, 4);
-            this.grbCreate.Margin = new System.Windows.Forms.Padding(4);
+            this.grbCreate.Location = new System.Drawing.Point(3, 3);
             this.grbCreate.Name = "grbCreate";
-            this.grbCreate.Padding = new System.Windows.Forms.Padding(4);
-            this.grbCreate.Size = new System.Drawing.Size(259, 406);
+            this.grbCreate.Size = new System.Drawing.Size(194, 330);
             this.grbCreate.TabIndex = 1;
             this.grbCreate.TabStop = false;
             this.grbCreate.Text = "Opret";
@@ -118,8 +115,7 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.lblNo, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 19);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 8;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -130,67 +126,52 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(251, 383);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(188, 311);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(4, 272);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Location = new System.Drawing.Point(3, 229);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(76, 28);
+            this.btnCancel.Size = new System.Drawing.Size(57, 23);
             this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "Annuller";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // lblNo
-            // 
-            this.lblNo.AutoSize = true;
-            this.lblNo.Location = new System.Drawing.Point(4, 0);
-            this.lblNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNo.Name = "lblNo";
-            this.lblNo.Size = new System.Drawing.Size(23, 17);
-            this.lblNo.TabIndex = 1;
-            this.lblNo.Text = "Nr";
-            // 
             // txtNumber
             // 
             this.txtNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNumber.Location = new System.Drawing.Point(92, 4);
-            this.txtNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNumber.Location = new System.Drawing.Point(70, 3);
             this.txtNumber.Name = "txtNumber";
-            this.txtNumber.Size = new System.Drawing.Size(155, 22);
+            this.txtNumber.Size = new System.Drawing.Size(115, 20);
             this.txtNumber.TabIndex = 2;
             // 
             // txtName
             // 
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.Location = new System.Drawing.Point(92, 34);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtName.Location = new System.Drawing.Point(70, 29);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(155, 22);
+            this.txtName.Size = new System.Drawing.Size(115, 20);
             this.txtName.TabIndex = 3;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(4, 30);
-            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblName.Location = new System.Drawing.Point(3, 26);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(41, 17);
+            this.lblName.Size = new System.Drawing.Size(33, 13);
             this.lblName.TabIndex = 4;
             this.lblName.Text = "Navn";
             // 
             // lblArtist
             // 
             this.lblArtist.AutoSize = true;
-            this.lblArtist.Location = new System.Drawing.Point(4, 60);
-            this.lblArtist.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblArtist.Location = new System.Drawing.Point(3, 52);
             this.lblArtist.Name = "lblArtist";
-            this.lblArtist.Size = new System.Drawing.Size(57, 17);
+            this.lblArtist.Size = new System.Drawing.Size(43, 13);
             this.lblArtist.TabIndex = 5;
             this.lblArtist.Text = "Kunster";
             // 
@@ -198,19 +179,17 @@
             // 
             this.txtArtist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtArtist.Location = new System.Drawing.Point(92, 64);
-            this.txtArtist.Margin = new System.Windows.Forms.Padding(4);
+            this.txtArtist.Location = new System.Drawing.Point(70, 55);
             this.txtArtist.Name = "txtArtist";
-            this.txtArtist.Size = new System.Drawing.Size(155, 22);
+            this.txtArtist.Size = new System.Drawing.Size(115, 20);
             this.txtArtist.TabIndex = 6;
             // 
             // lblPurchasePrise
             // 
             this.lblPurchasePrise.AutoSize = true;
-            this.lblPurchasePrise.Location = new System.Drawing.Point(4, 90);
-            this.lblPurchasePrise.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPurchasePrise.Location = new System.Drawing.Point(3, 78);
             this.lblPurchasePrise.Name = "lblPurchasePrise";
-            this.lblPurchasePrise.Size = new System.Drawing.Size(80, 17);
+            this.lblPurchasePrise.Size = new System.Drawing.Size(61, 13);
             this.lblPurchasePrise.TabIndex = 7;
             this.lblPurchasePrise.Text = "Indkøbspris";
             // 
@@ -218,49 +197,44 @@
             // 
             this.txtPurchasePrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPurchasePrice.Location = new System.Drawing.Point(92, 94);
-            this.txtPurchasePrice.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPurchasePrice.Location = new System.Drawing.Point(70, 81);
             this.txtPurchasePrice.Name = "txtPurchasePrice";
-            this.txtPurchasePrice.Size = new System.Drawing.Size(155, 22);
+            this.txtPurchasePrice.Size = new System.Drawing.Size(115, 20);
             this.txtPurchasePrice.TabIndex = 8;
             // 
             // txtStartPrice
             // 
             this.txtStartPrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtStartPrice.Location = new System.Drawing.Point(92, 124);
-            this.txtStartPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.txtStartPrice.Location = new System.Drawing.Point(70, 107);
             this.txtStartPrice.Name = "txtStartPrice";
-            this.txtStartPrice.Size = new System.Drawing.Size(155, 22);
+            this.txtStartPrice.Size = new System.Drawing.Size(115, 20);
             this.txtStartPrice.TabIndex = 9;
             // 
             // lblStartPrice
             // 
             this.lblStartPrice.AutoSize = true;
-            this.lblStartPrice.Location = new System.Drawing.Point(4, 120);
-            this.lblStartPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStartPrice.Location = new System.Drawing.Point(3, 104);
             this.lblStartPrice.Name = "lblStartPrice";
-            this.lblStartPrice.Size = new System.Drawing.Size(65, 17);
+            this.lblStartPrice.Size = new System.Drawing.Size(48, 13);
             this.lblStartPrice.TabIndex = 10;
             this.lblStartPrice.Text = "Start pris";
             // 
             // lblImgUrl
             // 
             this.lblImgUrl.AutoSize = true;
-            this.lblImgUrl.Location = new System.Drawing.Point(4, 150);
-            this.lblImgUrl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblImgUrl.Location = new System.Drawing.Point(3, 130);
             this.lblImgUrl.Name = "lblImgUrl";
-            this.lblImgUrl.Size = new System.Drawing.Size(50, 17);
+            this.lblImgUrl.Size = new System.Drawing.Size(38, 13);
             this.lblImgUrl.TabIndex = 11;
             this.lblImgUrl.Text = "Billede";
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(4, 183);
-            this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescription.Location = new System.Drawing.Point(3, 157);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(80, 17);
+            this.lblDescription.Size = new System.Drawing.Size(61, 13);
             this.lblDescription.TabIndex = 12;
             this.lblDescription.Text = "Beskrivelse";
             // 
@@ -268,19 +242,17 @@
             // 
             this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDescription.Location = new System.Drawing.Point(92, 187);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescription.Location = new System.Drawing.Point(70, 160);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(155, 77);
+            this.txtDescription.Size = new System.Drawing.Size(115, 63);
             this.txtDescription.TabIndex = 13;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(92, 272);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Location = new System.Drawing.Point(70, 229);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(64, 28);
+            this.btnSave.Size = new System.Drawing.Size(48, 23);
             this.btnSave.TabIndex = 15;
             this.btnSave.Text = "Gem";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -293,20 +265,19 @@
             this.tableLayoutPanel3.Controls.Add(this.btnShowImg, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.txtImgUrl, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(88, 150);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(67, 130);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(163, 33);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(121, 27);
             this.tableLayoutPanel3.TabIndex = 16;
             // 
             // btnShowImg
             // 
-            this.btnShowImg.Location = new System.Drawing.Point(119, 4);
-            this.btnShowImg.Margin = new System.Windows.Forms.Padding(4);
+            this.btnShowImg.Location = new System.Drawing.Point(88, 3);
             this.btnShowImg.Name = "btnShowImg";
-            this.btnShowImg.Size = new System.Drawing.Size(40, 25);
+            this.btnShowImg.Size = new System.Drawing.Size(30, 20);
             this.btnShowImg.TabIndex = 3;
             this.btnShowImg.Text = "Vis";
             this.btnShowImg.UseVisualStyleBackColor = true;
@@ -316,11 +287,19 @@
             // 
             this.txtImgUrl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtImgUrl.Location = new System.Drawing.Point(4, 4);
-            this.txtImgUrl.Margin = new System.Windows.Forms.Padding(4);
+            this.txtImgUrl.Location = new System.Drawing.Point(3, 3);
             this.txtImgUrl.Name = "txtImgUrl";
-            this.txtImgUrl.Size = new System.Drawing.Size(107, 22);
+            this.txtImgUrl.Size = new System.Drawing.Size(79, 20);
             this.txtImgUrl.TabIndex = 2;
+            // 
+            // lblNo
+            // 
+            this.lblNo.AutoSize = true;
+            this.lblNo.Location = new System.Drawing.Point(3, 0);
+            this.lblNo.Name = "lblNo";
+            this.lblNo.Size = new System.Drawing.Size(18, 13);
+            this.lblNo.TabIndex = 1;
+            this.lblNo.Text = "Nr";
             // 
             // tableLayoutPanel4
             // 
@@ -329,13 +308,12 @@
             this.tableLayoutPanel4.Controls.Add(this.dgvAtrList, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(271, 4);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(203, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(530, 406);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(398, 330);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // dgvAtrList
@@ -351,60 +329,13 @@
             this.descriptionDataGridViewTextBoxColumn});
             this.dgvAtrList.DataSource = this.artBindingSource1;
             this.dgvAtrList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvAtrList.Location = new System.Drawing.Point(4, 44);
-            this.dgvAtrList.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvAtrList.Location = new System.Drawing.Point(3, 35);
             this.dgvAtrList.Name = "dgvAtrList";
             this.dgvAtrList.ReadOnly = true;
             this.dgvAtrList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAtrList.Size = new System.Drawing.Size(522, 358);
+            this.dgvAtrList.Size = new System.Drawing.Size(392, 292);
             this.dgvAtrList.TabIndex = 1;
             this.dgvAtrList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAtrList_CellContentClick);
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 3;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel5.Controls.Add(this.cmbSort, 2, 0);
-            this.tableLayoutPanel5.Controls.Add(this.lblSort, 1, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(522, 32);
-            this.tableLayoutPanel5.TabIndex = 2;
-            // 
-            // cmbSort
-            // 
-            this.cmbSort.FormattingEnabled = true;
-            this.cmbSort.Items.AddRange(new object[] {
-            "Alle",
-            "Seneste måned",
-            "Seneste ½ år",
-            "Seneste 1 år"});
-            this.cmbSort.Location = new System.Drawing.Point(358, 4);
-            this.cmbSort.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbSort.Name = "cmbSort";
-            this.cmbSort.Size = new System.Drawing.Size(160, 24);
-            this.cmbSort.TabIndex = 0;
-            // 
-            // lblSort
-            // 
-            this.lblSort.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblSort.AutoSize = true;
-            this.lblSort.Location = new System.Drawing.Point(303, 7);
-            this.lblSort.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblSort.Name = "lblSort";
-            this.lblSort.Size = new System.Drawing.Size(47, 17);
-            this.lblSort.TabIndex = 1;
-            this.lblSort.Text = "Sorter";
-            // 
-            // artBindingSource
-            // 
-            this.artBindingSource.DataSource = typeof(TemaXP.Model.Art);
             // 
             // numberDataGridViewTextBoxColumn
             // 
@@ -439,14 +370,56 @@
             // 
             this.artBindingSource1.DataSource = typeof(TemaXP.Model.Art);
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.Controls.Add(this.cmbSort, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.lblSort, 1, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(392, 26);
+            this.tableLayoutPanel5.TabIndex = 2;
+            // 
+            // cmbSort
+            // 
+            this.cmbSort.FormattingEnabled = true;
+            this.cmbSort.Items.AddRange(new object[] {
+            "Alle",
+            "Seneste måned",
+            "Seneste ½ år",
+            "Seneste 1 år"});
+            this.cmbSort.Location = new System.Drawing.Point(268, 3);
+            this.cmbSort.Name = "cmbSort";
+            this.cmbSort.Size = new System.Drawing.Size(121, 21);
+            this.cmbSort.TabIndex = 0;
+            // 
+            // lblSort
+            // 
+            this.lblSort.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblSort.AutoSize = true;
+            this.lblSort.Location = new System.Drawing.Point(227, 6);
+            this.lblSort.Name = "lblSort";
+            this.lblSort.Size = new System.Drawing.Size(35, 13);
+            this.lblSort.TabIndex = 1;
+            this.lblSort.Text = "Sorter";
+            // 
+            // artBindingSource
+            // 
+            this.artBindingSource.DataSource = typeof(TemaXP.Model.Art);
+            // 
             // ArtTab
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ArtTab";
-            this.Size = new System.Drawing.Size(805, 414);
+            this.Size = new System.Drawing.Size(604, 336);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.grbCreate.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -455,10 +428,10 @@
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAtrList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artBindingSource1)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.artBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
