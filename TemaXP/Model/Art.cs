@@ -21,5 +21,6 @@ namespace TemaXP.Model
         public decimal PurchasePrice { get; set; }
         public virtual List<Bid> Bids { get; set; }
         public virtual Auction Auction { get; set; }
+        public int? AuctionId { get; set; }
     }
 }

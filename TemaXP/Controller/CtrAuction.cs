@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Core;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -57,14 +58,24 @@ namespace TemaXP.Controller {
             using (AuctionDBContext db = new AuctionDBContext()) {
                 try {
                     //var dbAuction = db.Auktions.Include(x => x.Arts).Single(x => x.Id == auction.Id);
-
+                    foreach (var art in auction.Arts) {
+                        art.AuctionId = auction.Id;
+                    }
                     db.Auktions.Attach(auction);
 
+
                     db.Entry(auction).State = EntityState.Modified;
+                    
                     foreach (var art in auction.Arts) {
+                        db.Arts.Attach(art);
                         db.Entry(art).Entity.Auction = db.Entry(auction).Entity;
                         db.Entry(art).State = EntityState.Modified;
                     }
+
+
+                    db.Auktions.AddOrUpdate();
+                    db.Arts.AddOrUpdate();
+                    
                     db.DebugDetectChanges();
                     db.SaveChanges();
                 } catch (UpdateException) {
