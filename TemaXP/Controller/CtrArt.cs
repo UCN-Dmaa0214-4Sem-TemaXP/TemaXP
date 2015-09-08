@@ -124,11 +124,13 @@ namespace TemaXP.Controller
         {
             if (art == null)
                 throw new ArgumentNullException("art");
-            using (AuctionDBContext db = new AuctionDBContext())
-            {
-                db.Arts.Attach(art);
-                db.Entry(art).State = EntityState.Deleted;
-                db.Arts.Remove(art);
+            using (AuctionDBContext db = new AuctionDBContext()) {
+                var dbArt = db.Arts.Single(x => x.Id == art.Id);
+
+                //db.Arts.Attach(art);
+                //db.Entry(art).State = EntityState.Deleted;
+                db.Arts.Remove(dbArt);
+                db.DebugDetectChanges();
                 db.SaveChanges();
             }
         }

@@ -58,7 +58,7 @@ namespace TemaXP_Test
             auction.Arts.Add(art);
 
             ctrAuction.UpdateAuction(auction);
-
+            //artCtr.DeleteArt(art);
         }
 
         [TestMethod]

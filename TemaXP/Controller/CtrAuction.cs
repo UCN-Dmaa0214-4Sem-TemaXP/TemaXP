@@ -56,10 +56,13 @@ namespace TemaXP.Controller {
                 throw new NullReferenceException("auction");
             using (AuctionDBContext db = new AuctionDBContext()) {
                 try {
+                    //var dbAuction = db.Auktions.Include(x => x.Arts).Single(x => x.Id == auction.Id);
+
+                    db.Auktions.Attach(auction);
 
                     db.Entry(auction).State = EntityState.Modified;
                     foreach (var art in auction.Arts) {
-                        art.Auction = auction;
+                        db.Entry(art).Entity.Auction = db.Entry(auction).Entity;
                         db.Entry(art).State = EntityState.Modified;
                     }
                     db.DebugDetectChanges();
