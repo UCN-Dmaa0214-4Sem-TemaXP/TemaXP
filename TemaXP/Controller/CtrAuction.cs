@@ -22,9 +22,14 @@ namespace TemaXP.Controller
                 Arts = arts
             };
             using (AuctionDBContext db = new AuctionDBContext()) {
-
+                //db.Arts.Load();
+                
                 foreach (var art in arts) {
                     db.Arts.Attach(art);
+                    db.Entry(art).Entity.Auction = auction;
+                    db.Entry(art).State = EntityState.Modified;
+                    //
+                    //db.Entry(art).State = EntityState.Modified;;
                 }
 
                 db.Auktions.Add(auction);

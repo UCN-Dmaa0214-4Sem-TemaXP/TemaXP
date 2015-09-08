@@ -32,7 +32,7 @@ namespace TemaXP_Test
         [TestMethod]
         public void TestCreateAndInsertAuction() {
 
-            Art art = artCtr.RetrieveById(1);
+            Art art = artCtr.RetrieveById(27);
             List<Art> artList = new List<Art>();
             artList.Add(art);
           
@@ -41,16 +41,22 @@ namespace TemaXP_Test
             Assert.IsNotNull(auction.Date, "Date created");
             Assert.IsTrue(0 < auction.Description.Length, "Description is set");
             Assert.IsNotNull(auction.Arts, "Art list is set");
-           // ctrAuction.DeleteAuction(auction);
+            ctrAuction.DeleteAuction(auction);
         }
 
         [TestMethod]
         public void TestUpdateAuction() {
 
-            Auction auction = ctrAuction.RetriveById(1);
+            Auction auction = ctrAuction.RetriveById(22);
+
+            Assert.IsNotNull(auction, "Auction is null");
+
             auction.Description = "Update test description";
-            auction.Date = new DateTime();
+            auction.Date = DateTime.Now;
+            var art = artCtr.CreateAndInsert("Papir","UCN","Et fint papir","",10,10);
             
+            auction.Arts.Add(art);
+
             ctrAuction.UpdateAuction(auction);
 
         }
