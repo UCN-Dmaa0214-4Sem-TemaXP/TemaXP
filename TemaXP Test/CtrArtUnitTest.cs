@@ -29,10 +29,10 @@ namespace TemaXP_Test
         }
 
         [TestMethod]
-        public void TestCreateAndInsertArt()
+        public void TestInsertArt()
         {
             Console.Out.WriteLine("TestCreateArt called");
-            Art aTemp = ctrArt.CreateAndInsert("Hej", "Dav", "Fin kunst", "asdasads", 450, 450);
+            Art aTemp = ctrArt.Insert("Hej123", "Dav", "Fin kunst", "asdasads", 450, 450);
             Assert.IsNotNull(aTemp, "Is not null");
 
             Assert.IsNotNull(aTemp.DateCreated, "Date is set");
@@ -47,25 +47,66 @@ namespace TemaXP_Test
         }
 
         [TestMethod]
-        public void TestRetriveById() {
-
+        public void TestRetriveByIdArt()
+        {
             Art aTemp = ctrArt.RetrieveById(1);
             Assert.AreEqual(1020, aTemp.Number);
             Assert.IsNotNull(aTemp, "is found");
-
         }
 
-            
         [TestMethod]
-        public void TestUpdateArt() {
+        public void TestRetrieveByNoArt()
+        {
+            Console.WriteLine("TestRetrieveByNo Called");
+            Art aTemp = ctrArt.RetrieveByNo(1020);
+            Assert.AreEqual(1020, aTemp.Number);
+            Assert.IsNotNull(aTemp, "is found");
+        }
+
+        [TestMethod]
+        public void TestRetrieveAllArt()
+        {
+            Console.WriteLine("TestRetrieveAll called");
+            List<Art> aCollection = ctrArt.RetrieveAll();
+
+            Assert.IsNotNull(aCollection, "aCollection is null");
+
+            Console.WriteLine(aCollection.Count);
+        }
+
+        [TestMethod]
+        public void TestUpdateArt()
+        {
             Console.WriteLine("TestUpdateArt called");
+            Art aTemp = ctrArt.RetrieveByNo(1020);
 
+            Assert.IsNotNull(aTemp, "aTemp is found");
+
+            aTemp.Number = 1200;
+
+            aTemp = ctrArt.Update(aTemp.Id, aTemp.Name, aTemp.Number, aTemp.Artist, aTemp.Description, aTemp.Image, aTemp.StartingBid, aTemp.PurchasePrice);
+
+            Assert.AreEqual(aTemp.Number, 1200, "Number is not equal");
+
+            aTemp = ctrArt.Update(aTemp.Id, aTemp.Name, 1020, aTemp.Artist, aTemp.Description, aTemp.Image, aTemp.StartingBid, aTemp.PurchasePrice);
         }
 
         [TestMethod]
-        public void TestSetNumber() {
-            int? number = ctrArt.SetArtNumber();
-            
+        public void TestDeleteArt()
+        {
+            Console.WriteLine("TestDeleteArt called");
+
+            Art aTemp = ctrArt.RetrieveByNo(1020);
+            Art aInsertAgain = aTemp;
+
+            Assert.IsNotNull(aTemp, "Art is found");
+
+            ctrArt.DeleteArt(aTemp);
+
+            aInsertAgain = ctrArt.Insert(aInsertAgain.Name, aInsertAgain.Artist, aInsertAgain.Description, aInsertAgain.Image, aInsertAgain.StartingBid, aInsertAgain.PurchasePrice);
+            aInsertAgain = ctrArt.RetrieveByNo(aInsertAgain.Number);
+
+            aInsertAgain = ctrArt.Update(aInsertAgain.Id, aInsertAgain.Name, 1020, aInsertAgain.Artist, aInsertAgain.Description, aInsertAgain.Image, aInsertAgain.StartingBid, aInsertAgain.PurchasePrice);
         }
     }
 }

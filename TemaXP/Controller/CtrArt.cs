@@ -11,7 +11,7 @@ namespace TemaXP.Controller
 {
     public class CtrArt
     {
-        public Art CreateAndInsert(string name, string artist, string description, string image, decimal startingbid, decimal purchaseprice)
+        public Art Insert(string name, string artist, string description, string image, decimal startingbid, decimal purchaseprice)
         {
             using (AuctionDBContext db = new AuctionDBContext())
             {
@@ -20,13 +20,13 @@ namespace TemaXP.Controller
                 aTemp.DateCreated = DateTime.Now;
                 aTemp.Name = name;
                 aTemp.Artist = artist;
-                aTemp.Number = r.Next(1, 450);
+                aTemp.Number = SetArtNumber();
                 aTemp.Description = description;
                 aTemp.Image = image;
                 aTemp.StartingBid = startingbid;
                 aTemp.PurchasePrice = purchaseprice;
                 aTemp.Bids = null;
-                
+
                 try
                 {
                     db.Arts.Add(aTemp);
@@ -36,11 +36,9 @@ namespace TemaXP.Controller
                 {
                     throw e;
                 }
-                
+
                 return aTemp;
             }
-
-            
         }
 
         public Art Update(int id, string name, int no, string artist, string description, string image, decimal startingbid, decimal purchaseprice)
@@ -59,12 +57,16 @@ namespace TemaXP.Controller
 
                 try
                 {
+                    db.Arts.Attach(aTemp);
+                    var entry = db.Entry(aTemp);
+                    entry.State = EntityState.Modified;
                     db.SaveChanges();
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     throw e;
                 }
+
                 return RetrieveById(id);
             }
         }
@@ -105,14 +107,25 @@ namespace TemaXP.Controller
 
         public List<Art> RetrieveAll()
         {
-            return null;
+            using (AuctionDBContext db = new AuctionDBContext())
+            {
+                try
+                {
+                    return db.Arts.ToList();
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+            }
         }
 
-        public void DeleteArt(Art art) {
-            
-            if(art == null)
+        public void DeleteArt(Art art)
+        {
+            if (art == null)
                 throw new ArgumentNullException("art");
-            using (AuctionDBContext db = new AuctionDBContext()) {
+            using (AuctionDBContext db = new AuctionDBContext())
+            {
                 db.Arts.Attach(art);
                 db.Entry(art).State = EntityState.Deleted;
                 db.Arts.Remove(art);
@@ -120,11 +133,10 @@ namespace TemaXP.Controller
             }
         }
 
-        public int? SetArtNumber()
+        private int SetArtNumber()
         {
-
             int? currentNumber;
-            int? newNumber;
+            int newNumber;
             using (AuctionDBContext db = new AuctionDBContext())
             {
 
@@ -133,7 +145,11 @@ namespace TemaXP.Controller
                 {
                     newNumber = 1000;
                 }
-                newNumber = currentNumber + 10;
+                else
+                {
+                    newNumber = Convert.ToInt32(currentNumber) + 10;
+                }
+
                 return newNumber;
             }
         }
