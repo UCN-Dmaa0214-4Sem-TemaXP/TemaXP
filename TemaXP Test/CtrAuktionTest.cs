@@ -57,12 +57,7 @@ namespace TemaXP_Test
             var art = artCtr.Insert("Papir","UCN","Et fint papir","",10,10);
             
             auction.Arts.Add(art);
-
-            var art2 = auction.Arts.Single(x => x.Id == 51);
-
-            auction.Arts.Remove(art2);
-
-
+            
             ctrAuction.UpdateAuction(auction);
             //artCtr.DeleteArt(art);
         }

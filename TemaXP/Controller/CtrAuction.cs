@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Data.Entity.Core;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,25 +58,37 @@ namespace TemaXP.Controller {
                 throw new NullReferenceException("auction");
             using (AuctionDBContext db = new AuctionDBContext()) {
                 try {
-                    //var dbAuction = db.Auktions.Include(x => x.Arts).Single(x => x.Id == auction.Id);
-                    foreach (var art in auction.Arts) {
-                        art.AuctionId = auction.Id;
+                    var artsInDb = db.Arts.Where(x => x.AuctionId == auction.Id).ToList();
+
+                    foreach (var artId in auction.Arts.Select(x => x.Id)) {
+                        var tempObj = artsInDb.SingleOrDefault(x => x.Id == artId);
+                        if (tempObj != null) {
+                            artsInDb.Remove(tempObj);
+                        }
                     }
-                    db.Auktions.Attach(auction);
 
-
-                    db.Entry(auction).State = EntityState.Modified;
-                    
-                    foreach (var art in auction.Arts) {
-                        db.Arts.Attach(art);
-                        db.Entry(art).Entity.Auction = db.Entry(auction).Entity;
+                    foreach (var art in artsInDb) {
+                        db.Entry(art).Entity.AuctionId = null;
                         db.Entry(art).State = EntityState.Modified;
                     }
 
+                    foreach (var art in auction.Arts) {
+                        //art.AuctionId = auction.Id;
+                        //db.Arts.Attach(art);
+                        //db.Entry(art).State = EntityState.Modified;
+                    }
+                    //db.Auktions.Attach(auction);
 
-                    db.Auktions.AddOrUpdate();
-                    db.Arts.AddOrUpdate();
-                    
+                    //db.Entry(auction).State = EntityState.Modified;
+                    foreach (var art in auction.Arts) {
+                        //db.Entry(art).State = EntityState.Modified;
+                    }
+                    foreach (var art in db.ChangeTracker.Entries<Art>()) {
+                        art.Entity.AuctionId = auction.Id;
+                        art.State = EntityState.Modified;
+                    }
+
+
                     db.DebugDetectChanges();
                     db.SaveChanges();
                 } catch (UpdateException) {
