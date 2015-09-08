@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Controller\CtrArt.cs" />
     <Compile Include="Controller\CtrAuction.cs" />
+    <Compile Include="Controller\CtrMember.cs" />
     <Compile Include="GUI\ArtTab.cs">
       <SubType>UserControl</SubType>
     </Compile>

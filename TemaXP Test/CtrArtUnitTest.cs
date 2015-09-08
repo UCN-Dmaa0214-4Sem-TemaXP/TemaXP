@@ -49,7 +49,7 @@ namespace TemaXP_Test
         [TestMethod]
         public void TestRetriveByIdArt()
         {
-            Art aTemp = ctrArt.RetrieveById(1);
+            Art aTemp = ctrArt.RetrieveById(27);
             Assert.AreEqual(1020, aTemp.Number);
             Assert.IsNotNull(aTemp, "is found");
         }
