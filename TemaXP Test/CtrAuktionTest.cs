@@ -53,7 +53,7 @@ namespace TemaXP_Test
 
             auction.Description = "Update test description";
             auction.Date = DateTime.Now;
-            var art = artCtr.CreateAndInsert("Papir","UCN","Et fint papir","",10,10);
+            var art = artCtr.Insert("Papir","UCN","Et fint papir","",10,10);
             
             auction.Arts.Add(art);
 

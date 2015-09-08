@@ -8,22 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using TemaXP.Model;
 
-namespace TemaXP.Controller
-{
-    public class CtrAuction
-    {
+namespace TemaXP.Controller {
+    public class CtrAuction {
 
         public Auction CreateAuction(DateTime date, string description, List<Art> arts) {
 
-            Auction auction = new Auction()
-            {
+            Auction auction = new Auction() {
                 Date = date,
                 Description = description,
                 Arts = arts
             };
             using (AuctionDBContext db = new AuctionDBContext()) {
                 //db.Arts.Load();
-                
+
                 foreach (var art in arts) {
                     db.Arts.Attach(art);
                     db.Entry(art).Entity.Auction = auction;
@@ -45,29 +42,31 @@ namespace TemaXP.Controller
                 throw new NullReferenceException("auction");
 
             using (AuctionDBContext db = new AuctionDBContext()) {
-                
+
                 db.Auktions.Attach(auction);
                 db.Entry(auction).State = EntityState.Deleted;
                 db.Auktions.Remove(auction);
                 db.SaveChanges();
-            }   
+            }
         }
 
         public Auction UpdateAuction(Auction auction) {
 
             if (auction == null)
                 throw new NullReferenceException("auction");
-            using (AuctionDBContext db = new AuctionDBContext())
-            {
+            using (AuctionDBContext db = new AuctionDBContext()) {
                 try {
+
                     db.Entry(auction).State = EntityState.Modified;
-                    db.Entry(auction.Arts).State = EntityState.Modified;
+                    foreach (var art in auction.Arts) {
+                        art.Auction = auction;
+                        db.Entry(art).State = EntityState.Modified;
+                    }
+                    db.DebugDetectChanges();
                     db.SaveChanges();
+                } catch (UpdateException) {
+
                 }
-                catch (UpdateException)
-                {
-                    
-                }         
             }
             return auction;
         }
@@ -75,8 +74,7 @@ namespace TemaXP.Controller
         public Auction RetriveById(int id) {
             Auction auction = null;
             using (AuctionDBContext db = new AuctionDBContext()) {
-                db.Auktions.Include(x => x.Arts).Single(x => x.Id == id);
-                db.SaveChanges();
+                auction = db.Auktions.Include(x => x.Arts).Single(x => x.Id == id);
             }
             return auction;
         }
