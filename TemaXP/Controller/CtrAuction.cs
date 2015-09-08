@@ -70,7 +70,8 @@ namespace TemaXP.Controller
         public Auction RetriveById(int id) {
             Auction auction = null;
             using (AuctionDBContext db = new AuctionDBContext()) {
-                
+                db.Auktions.Include(x => x.Arts).Single(x => x.Id == id);
+                db.SaveChanges();
             }
             return auction;
         }
