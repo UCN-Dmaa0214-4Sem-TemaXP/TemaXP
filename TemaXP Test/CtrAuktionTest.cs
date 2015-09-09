@@ -5,18 +5,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TemaXP.Controller;
 using TemaXP.Model;
 
-namespace TemaXP_Test
-{
+namespace TemaXP_Test {
     [TestClass]
-    public class CtrAuktionTest
-    {
+    public class CtrAuktionTest {
 
         private CtrAuction ctrAuction;
         private CtrArt artCtr;
 
         [TestInitialize]
-        public void CtrArtTestInitialize()
-        {
+        public void CtrArtTestInitialize() {
             Console.Out.WriteLine("CtrArtTestInitialize called");
             ctrAuction = new CtrAuction();
             artCtr = new CtrArt();
@@ -24,16 +21,14 @@ namespace TemaXP_Test
         }
 
         [TestCleanup]
-        public void CtrArtTestCleanup()
-        {
+        public void CtrArtTestCleanup() {
             Console.Out.WriteLine("CtrArtTestCleanup called");
             ctrAuction = null;
             artCtr = null;
         }
 
         [TestMethod]
-        public void TestCreateAndInsertAuction()
-        {
+        public void TestCreateAndInsertAuction() {
 
             Art art = artCtr.RetrieveById(27);
             List<Art> artList = new List<Art>();
@@ -48,8 +43,7 @@ namespace TemaXP_Test
         }
 
         [TestMethod]
-        public void TestUpdateAuction()
-        {
+        public void TestUpdateAuction() {
 
             Auction auction = ctrAuction.RetriveById(27);
 
@@ -71,21 +65,29 @@ namespace TemaXP_Test
         }
 
         [TestMethod]
-        public void TestRetriveById()
-        {
+        public void TestRetriveById() {
 
             Auction auction = ctrAuction.RetriveById(1);
             Assert.IsNotNull(auction, "auction is found");
         }
 
         [TestMethod]
-        public void TestRetrieveBidsByArt()
-        {
+        public void TestRetrieveBidsByArt() {
             Console.Out.WriteLine("TestRetrieveBidsByArt called");
 
             List<Bid> bCollection = ctrAuction.RetrieveBidsByArt(new CtrArt().RetrieveByNo(1020));
 
             Assert.IsNotNull(bCollection);
         }
+
+        [TestMethod]
+        public void TestGetAll() {
+            Console.Out.WriteLine("TestGetAll called");
+
+            List<Auction> aCollection = ctrAuction.GetAll(true);
+
+            Assert.IsNotNull(aCollection);
+        }
+
     }
 }
