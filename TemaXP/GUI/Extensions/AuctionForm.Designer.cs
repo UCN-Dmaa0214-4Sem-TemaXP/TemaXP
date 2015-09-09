@@ -1,6 +1,6 @@
 ﻿namespace TemaXP.GUI.Extensions
 {
-    partial class AuctionForm
+    partial class Budgivning
     {
         /// <summary>
         /// Required designer variable.
@@ -31,19 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.lblHeader = new System.Windows.Forms.Label();
             this.dgvArts = new System.Windows.Forms.DataGridView();
-            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Artist = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artistDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startingBidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.purchasePriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.auctionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.auctionIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblArtID = new System.Windows.Forms.Label();
             this.txtMember = new System.Windows.Forms.TextBox();
@@ -54,6 +41,10 @@
             this.txtBids = new System.Windows.Forms.TextBox();
             this.bidBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblBidState = new System.Windows.Forms.Label();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Artist = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startingBidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bidBindingSource)).BeginInit();
@@ -63,9 +54,10 @@
             // 
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(12, 9);
+            this.lblHeader.Location = new System.Drawing.Point(16, 11);
+            this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(57, 20);
+            this.lblHeader.Size = new System.Drawing.Size(70, 25);
             this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "label1";
             // 
@@ -77,118 +69,19 @@
             this.dgvArts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Number,
-            this.Artist,
-            this.idDataGridViewTextBoxColumn,
-            this.dateCreatedDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
-            this.artistDataGridViewTextBoxColumn,
-            this.numberDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.imageDataGridViewTextBoxColumn,
-            this.startingBidDataGridViewTextBoxColumn,
-            this.purchasePriceDataGridViewTextBoxColumn,
-            this.auctionDataGridViewTextBoxColumn,
-            this.auctionIdDataGridViewTextBoxColumn});
+            this.Artist,
+            this.startingBidDataGridViewTextBoxColumn});
             this.dgvArts.DataSource = this.artBindingSource;
-            this.dgvArts.Location = new System.Drawing.Point(16, 70);
+            this.dgvArts.Location = new System.Drawing.Point(21, 86);
+            this.dgvArts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvArts.MultiSelect = false;
             this.dgvArts.Name = "dgvArts";
             this.dgvArts.ReadOnly = true;
             this.dgvArts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArts.Size = new System.Drawing.Size(344, 483);
+            this.dgvArts.Size = new System.Drawing.Size(459, 594);
             this.dgvArts.TabIndex = 1;
             this.dgvArts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArts_CellContentClick);
-            // 
-            // Number
-            // 
-            this.Number.DataPropertyName = "Number";
-            this.Number.HeaderText = "Number";
-            this.Number.Name = "Number";
-            this.Number.ReadOnly = true;
-            // 
-            // Artist
-            // 
-            this.Artist.DataPropertyName = "Artist";
-            this.Artist.HeaderText = "Artist";
-            this.Artist.Name = "Artist";
-            this.Artist.ReadOnly = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateCreatedDataGridViewTextBoxColumn
-            // 
-            this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "DateCreated";
-            this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "DateCreated";
-            this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
-            this.dateCreatedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // artistDataGridViewTextBoxColumn
-            // 
-            this.artistDataGridViewTextBoxColumn.DataPropertyName = "Artist";
-            this.artistDataGridViewTextBoxColumn.HeaderText = "Artist";
-            this.artistDataGridViewTextBoxColumn.Name = "artistDataGridViewTextBoxColumn";
-            this.artistDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numberDataGridViewTextBoxColumn
-            // 
-            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
-            this.numberDataGridViewTextBoxColumn.HeaderText = "Number";
-            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
-            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // imageDataGridViewTextBoxColumn
-            // 
-            this.imageDataGridViewTextBoxColumn.DataPropertyName = "Image";
-            this.imageDataGridViewTextBoxColumn.HeaderText = "Image";
-            this.imageDataGridViewTextBoxColumn.Name = "imageDataGridViewTextBoxColumn";
-            this.imageDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // startingBidDataGridViewTextBoxColumn
-            // 
-            this.startingBidDataGridViewTextBoxColumn.DataPropertyName = "StartingBid";
-            this.startingBidDataGridViewTextBoxColumn.HeaderText = "StartingBid";
-            this.startingBidDataGridViewTextBoxColumn.Name = "startingBidDataGridViewTextBoxColumn";
-            this.startingBidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // purchasePriceDataGridViewTextBoxColumn
-            // 
-            this.purchasePriceDataGridViewTextBoxColumn.DataPropertyName = "PurchasePrice";
-            this.purchasePriceDataGridViewTextBoxColumn.HeaderText = "PurchasePrice";
-            this.purchasePriceDataGridViewTextBoxColumn.Name = "purchasePriceDataGridViewTextBoxColumn";
-            this.purchasePriceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // auctionDataGridViewTextBoxColumn
-            // 
-            this.auctionDataGridViewTextBoxColumn.DataPropertyName = "Auction";
-            this.auctionDataGridViewTextBoxColumn.HeaderText = "Auction";
-            this.auctionDataGridViewTextBoxColumn.Name = "auctionDataGridViewTextBoxColumn";
-            this.auctionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // auctionIdDataGridViewTextBoxColumn
-            // 
-            this.auctionIdDataGridViewTextBoxColumn.DataPropertyName = "AuctionId";
-            this.auctionIdDataGridViewTextBoxColumn.HeaderText = "AuctionId";
-            this.auctionIdDataGridViewTextBoxColumn.Name = "auctionIdDataGridViewTextBoxColumn";
-            this.auctionIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // artBindingSource
             // 
@@ -198,34 +91,38 @@
             // 
             this.lblArtID.AutoSize = true;
             this.lblArtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArtID.Location = new System.Drawing.Point(303, 47);
+            this.lblArtID.Location = new System.Drawing.Point(404, 58);
+            this.lblArtID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblArtID.Name = "lblArtID";
-            this.lblArtID.Size = new System.Drawing.Size(57, 20);
+            this.lblArtID.Size = new System.Drawing.Size(70, 25);
             this.lblArtID.TabIndex = 2;
             this.lblArtID.Text = "label1";
             // 
             // txtMember
             // 
-            this.txtMember.Location = new System.Drawing.Point(789, 67);
+            this.txtMember.Location = new System.Drawing.Point(1052, 82);
+            this.txtMember.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMember.Name = "txtMember";
             this.txtMember.ReadOnly = true;
-            this.txtMember.Size = new System.Drawing.Size(234, 20);
+            this.txtMember.Size = new System.Drawing.Size(311, 22);
             this.txtMember.TabIndex = 4;
             // 
             // txtBidAmount
             // 
-            this.txtBidAmount.Location = new System.Drawing.Point(789, 93);
+            this.txtBidAmount.Location = new System.Drawing.Point(1052, 114);
+            this.txtBidAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBidAmount.Name = "txtBidAmount";
             this.txtBidAmount.ReadOnly = true;
-            this.txtBidAmount.Size = new System.Drawing.Size(234, 20);
+            this.txtBidAmount.Size = new System.Drawing.Size(311, 22);
             this.txtBidAmount.TabIndex = 4;
             // 
             // btnBid
             // 
             this.btnBid.Enabled = false;
-            this.btnBid.Location = new System.Drawing.Point(789, 119);
+            this.btnBid.Location = new System.Drawing.Point(1052, 146);
+            this.btnBid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBid.Name = "btnBid";
-            this.btnBid.Size = new System.Drawing.Size(75, 23);
+            this.btnBid.Size = new System.Drawing.Size(100, 28);
             this.btnBid.TabIndex = 5;
             this.btnBid.Text = "Byd!";
             this.btnBid.UseVisualStyleBackColor = true;
@@ -234,29 +131,32 @@
             // lblMemberNo
             // 
             this.lblMemberNo.AutoSize = true;
-            this.lblMemberNo.Location = new System.Drawing.Point(690, 67);
+            this.lblMemberNo.Location = new System.Drawing.Point(920, 82);
+            this.lblMemberNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMemberNo.Name = "lblMemberNo";
-            this.lblMemberNo.Size = new System.Drawing.Size(61, 13);
+            this.lblMemberNo.Size = new System.Drawing.Size(81, 17);
             this.lblMemberNo.TabIndex = 6;
             this.lblMemberNo.Text = "Medlemsnr.";
             // 
             // lblBidAmount
             // 
             this.lblBidAmount.AutoSize = true;
-            this.lblBidAmount.Location = new System.Drawing.Point(690, 96);
+            this.lblBidAmount.Location = new System.Drawing.Point(920, 118);
+            this.lblBidAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBidAmount.Name = "lblBidAmount";
-            this.lblBidAmount.Size = new System.Drawing.Size(26, 13);
+            this.lblBidAmount.Size = new System.Drawing.Size(33, 17);
             this.lblBidAmount.TabIndex = 6;
             this.lblBidAmount.Text = "Bud";
             // 
             // txtBids
             // 
             this.txtBids.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBids.Location = new System.Drawing.Point(391, 70);
+            this.txtBids.Location = new System.Drawing.Point(521, 86);
+            this.txtBids.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBids.Multiline = true;
             this.txtBids.Name = "txtBids";
             this.txtBids.ReadOnly = true;
-            this.txtBids.Size = new System.Drawing.Size(282, 483);
+            this.txtBids.Size = new System.Drawing.Size(375, 594);
             this.txtBids.TabIndex = 7;
             // 
             // bidBindingSource
@@ -266,16 +166,46 @@
             // lblBidState
             // 
             this.lblBidState.AutoSize = true;
-            this.lblBidState.Location = new System.Drawing.Point(786, 162);
+            this.lblBidState.Location = new System.Drawing.Point(1048, 199);
+            this.lblBidState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBidState.Name = "lblBidState";
-            this.lblBidState.Size = new System.Drawing.Size(0, 13);
+            this.lblBidState.Size = new System.Drawing.Size(0, 17);
             this.lblBidState.TabIndex = 8;
             // 
-            // AuctionForm
+            // Number
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Number.DataPropertyName = "Number";
+            this.Number.HeaderText = "Number";
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Artist
+            // 
+            this.Artist.DataPropertyName = "Artist";
+            this.Artist.HeaderText = "Artist";
+            this.Artist.Name = "Artist";
+            this.Artist.ReadOnly = true;
+            // 
+            // startingBidDataGridViewTextBoxColumn
+            // 
+            this.startingBidDataGridViewTextBoxColumn.DataPropertyName = "StartingBid";
+            this.startingBidDataGridViewTextBoxColumn.HeaderText = "StartingBid";
+            this.startingBidDataGridViewTextBoxColumn.Name = "startingBidDataGridViewTextBoxColumn";
+            this.startingBidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Budgivning
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 565);
+            this.ClientSize = new System.Drawing.Size(1384, 695);
             this.Controls.Add(this.lblBidState);
             this.Controls.Add(this.txtBids);
             this.Controls.Add(this.lblBidAmount);
@@ -286,7 +216,9 @@
             this.Controls.Add(this.lblArtID);
             this.Controls.Add(this.dgvArts);
             this.Controls.Add(this.lblHeader);
-            this.Name = "AuctionForm";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "Budgivning";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AuctionForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvArts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artBindingSource)).EndInit();
@@ -302,20 +234,7 @@
         private System.Windows.Forms.DataGridView dgvArts;
         private System.Windows.Forms.BindingSource artBindingSource;
         private System.Windows.Forms.Label lblArtID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Artist;
         private System.Windows.Forms.BindingSource bidBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateCreatedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn artistDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn imageDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startingBidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn purchasePriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn auctionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn auctionIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox txtMember;
         private System.Windows.Forms.TextBox txtBidAmount;
         private System.Windows.Forms.Button btnBid;
@@ -323,5 +242,9 @@
         private System.Windows.Forms.Label lblBidAmount;
         private System.Windows.Forms.TextBox txtBids;
         private System.Windows.Forms.Label lblBidState;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Artist;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startingBidDataGridViewTextBoxColumn;
     }
 }

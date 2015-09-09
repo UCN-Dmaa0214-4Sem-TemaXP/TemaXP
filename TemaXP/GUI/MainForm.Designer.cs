@@ -35,6 +35,7 @@
             this.tabArt.SuspendLayout();
             this.tabAuction.SuspendLayout();
             this.SuspendLayout();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             // 
             // menuStrip1
             // 

@@ -12,7 +12,7 @@ using TemaXP.Model;
 
 namespace TemaXP.GUI.Extensions
 {
-    public partial class AuctionForm : Form
+    public partial class Budgivning : Form
     {
         private Auction currentAuction;
         private CtrArt ctrArt;
@@ -23,7 +23,7 @@ namespace TemaXP.GUI.Extensions
         private decimal previousBid = 0;
         private Member previosBidder = null;
 
-        public AuctionForm(Auction au)
+        public Budgivning(Auction au)
         {
             InitializeComponent();
 

@@ -143,7 +143,7 @@ namespace TemaXP.GUI {
 
         private void lbxUpcoming_MouseDoubleClick(object sender, MouseEventArgs e) {
             if (auction == null) return;
-            AuctionForm form = new AuctionForm(auction);
+            Budgivning form = new Budgivning(auction);
             form.ShowDialog(this);
         }
 
