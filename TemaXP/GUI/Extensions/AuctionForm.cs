@@ -101,7 +101,7 @@ namespace TemaXP.GUI.Extensions
                         }
                         if (state == CtrMember.MemberBidState.NotEnough)
                         {
-                            lblBidState.Text = "Bud blev ikke accepteret!";
+                            lblBidState.Text = "Medlem har ikke nok point!";
                         }
                     }
                 }
@@ -135,7 +135,7 @@ namespace TemaXP.GUI.Extensions
                     }
                     if (state == CtrMember.MemberBidState.NotEnough)
                     {
-                        lblBidState.Text = "Bud blev ikke accepteret!";
+                        lblBidState.Text = "Medlem har ikke nok point!";
                     }
                 }
 
