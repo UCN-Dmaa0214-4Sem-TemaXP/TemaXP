@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TemaXP.Controller;
 using TemaXP.GUI;
+using TemaXP.GUI.Extensions;
 using TemaXP.Model;
 
 namespace TemaXP
@@ -18,7 +20,11 @@ namespace TemaXP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            //Application.Run(new MainForm());
+
+            ///Uncomment to start auctionform
+            Auction au = new CtrAuction().RetriveById(27);
+            Application.Run(new AuctionForm(au));
 
             //using (AuctionDBContext db = new AuctionDBContext())
             //{
@@ -33,7 +39,7 @@ namespace TemaXP
             //        Email = "john@d.dk"
             //    });
             //    db.SaveChanges();
-            }
         }
-    
+    }
+
 }
