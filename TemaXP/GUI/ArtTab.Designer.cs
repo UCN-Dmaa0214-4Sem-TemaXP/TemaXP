@@ -52,15 +52,9 @@
             this.lblSort = new System.Windows.Forms.Label();
             this.artBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artistDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-<<<<<<< HEAD
-            this.artBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.cmbSort = new System.Windows.Forms.ComboBox();
-            this.lblSort = new System.Windows.Forms.Label();
-=======
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
->>>>>>> origin/master
             this.artBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.grbCreate.SuspendLayout();
@@ -368,7 +362,9 @@
             this.dgvAtrList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAtrList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numberDataGridViewTextBoxColumn,
-            this.artistDataGridViewTextBoxColumn});
+            this.nameDataGridViewTextBoxColumn,
+            this.artistDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn});
             this.dgvAtrList.DataSource = this.artBindingSource1;
             this.dgvAtrList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAtrList.Location = new System.Drawing.Point(4, 44);
@@ -379,29 +375,7 @@
             this.dgvAtrList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAtrList.Size = new System.Drawing.Size(522, 358);
             this.dgvAtrList.TabIndex = 1;
-<<<<<<< HEAD
-            this.dgvAtrList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAtrList_CellContentClick);
-            // 
-            // numberDataGridViewTextBoxColumn
-            // 
-            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
-            this.numberDataGridViewTextBoxColumn.HeaderText = "Number";
-            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
-            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // artistDataGridViewTextBoxColumn
-            // 
-            this.artistDataGridViewTextBoxColumn.DataPropertyName = "Artist";
-            this.artistDataGridViewTextBoxColumn.HeaderText = "Artist";
-            this.artistDataGridViewTextBoxColumn.Name = "artistDataGridViewTextBoxColumn";
-            this.artistDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // artBindingSource1
-            // 
-            this.artBindingSource1.DataSource = typeof(TemaXP.Model.Art);
-=======
             this.dgvAtrList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAtrList_CellClick);
->>>>>>> origin/master
             // 
             // tableLayoutPanel5
             // 
@@ -536,7 +510,9 @@
         private System.Windows.Forms.Label lblSort;
         private System.Windows.Forms.BindingSource artBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn artistDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource artBindingSource1;
 
     }
