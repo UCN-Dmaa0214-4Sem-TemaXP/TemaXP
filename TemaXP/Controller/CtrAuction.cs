@@ -121,17 +121,73 @@ namespace TemaXP.Controller
 
         public List<Bid> RetrieveBidsByArt(Art a)
         {
+            List<Bid> bCollection = null;
             using (AuctionDBContext db = new AuctionDBContext())
             {
                 try
                 {
-                    return db.Bids.Where(x => x.Art.Id == a.Id).ToList();
+                    bCollection = db.Bids.Include(x => x.Member).Where(x => x.Art.Id == a.Id).ToList();
                 }
                 catch (Exception e)
                 {
                     throw e;
                 }
             }
+
+            return bCollection;
+        }
+
+        public CtrMember.MemberBidState InsertBid(int mid, decimal bidAmount, int aid)
+        {
+            CtrArt ctrArt = new CtrArt();
+            CtrMember ctrMem = new CtrMember();
+            Art a = ctrArt.RetrieveById(aid);
+            Member m = ctrMem.RetrieveSingleByID(mid);
+
+            CtrMember.MemberBidState bidState = CtrMember.MemberBidState.BidError;
+
+            if (m == null)
+            {
+                return CtrMember.MemberBidState.BidError;
+            }
+            if (a == null)
+            {
+                return CtrMember.MemberBidState.BidError;
+            }
+
+            if (ctrMem.CheckEligibleBid(m, bidAmount) == CtrMember.MemberBidState.Verified)
+            {
+                using (AuctionDBContext db = new AuctionDBContext())
+                {
+                    Bid b = new Bid();
+
+                    b.DateTime = DateTime.Now;
+                    b.BidAmount = bidAmount;
+                    b.Art = a;
+                    b.Member = m;
+
+                    try
+                    {
+                        db.Members.Attach(m);
+                        db.Arts.Attach(a);
+                        db.Bids.Add(b);
+                        db.DebugDetectChanges();
+                        db.SaveChanges();
+                    }
+                    catch (Exception e)
+                    {
+                        throw e;
+                    }
+
+                    bidState = CtrMember.MemberBidState.BidConfirmed;
+                }
+            }
+            else
+            {
+                bidState = CtrMember.MemberBidState.NotEnough;
+            }
+
+            return bidState;
         }
     }
 }

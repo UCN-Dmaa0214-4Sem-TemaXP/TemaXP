@@ -35,6 +35,16 @@ namespace TemaXP_Test
             Assert.IsNotNull(mTemp, "Is not null");
         }
 
+        [TestMethod]
+        public void TestMemberEligibleBid()
+        {
+            Console.Out.WriteLine("TestMemberEligibleBid called");
 
+            Member mTemp = ctrMem.RetrieveSingleByID(1);
+
+            CtrMember.MemberBidState bidState = ctrMem.CheckEligibleBid(mTemp, 9001);
+
+            Console.Out.WriteLine(bidState);
+        }
     }
 }

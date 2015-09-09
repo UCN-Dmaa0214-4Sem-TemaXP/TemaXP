@@ -16,6 +16,12 @@ namespace TemaXP.GUI.Extensions
     {
         private Auction currentAuction;
         private CtrArt ctrArt;
+        private CtrAuction ctrAuc;
+        private Art currentArt;
+
+        // Highest bidder
+        private decimal previousBid = 0;
+        private Member previosBidder = null;
 
         public AuctionForm(Auction au)
         {
@@ -26,19 +32,106 @@ namespace TemaXP.GUI.Extensions
             currentAuction = au;
 
             ctrArt = new CtrArt();
+            ctrAuc = new CtrAuction();
 
             dgvArts.DataSource = ctrArt.RetrieveAll(au.Id);
         }
 
         private void dgvArts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var selectedArt = (Art)dgvArts.CurrentRow.DataBoundItem;
+            currentArt = (Art)dgvArts.CurrentRow.DataBoundItem;
 
-            lblArtID.Text = selectedArt.Id.ToString();
+            lblArtID.Text = currentArt.Id.ToString();
+
+            populatebids(currentArt.Number);
         }
 
-        private void populatedgvbids()
+        private void populatebids(int no)
         {
+            txtBids.Text = "";
+            List<Bid> bCollection = ctrAuc.RetrieveBidsByArt(ctrArt.RetrieveByNo(no));
+
+            txtBidAmount.ReadOnly = false;
+            txtMember.ReadOnly = false;
+            btnBid.Enabled = true;
+
+            foreach (var item in bCollection)
+            {
+                txtBids.Text = txtBids.Text + "Medlemnr. " + item.Member.Id + " har budt " + item.BidAmount + Environment.NewLine;
+            }
+        }
+
+        private void btnBid_Click(object sender, EventArgs e)
+        {
+            CtrMember ctrMem = new CtrMember();
+
+            Member m = ctrMem.RetrieveSingleByID(Convert.ToInt32(txtMember.Text));
+            Art a = ctrArt.RetrieveByNo(currentArt.Number);
+
+            if (previosBidder != null)
+            {
+                if (previosBidder.Id == m.Id)
+                {
+                    lblBidState.Text = "Medlem har allerede højeste bud!";
+                }
+                else
+                {
+                    if (currentArt.StartingBid > Convert.ToDecimal(txtBidAmount.Text))
+                    {
+                        lblBidState.Text = "Buddet er mindre end startsprisen!";
+                    }
+                    else if (previousBid >= Convert.ToDecimal(txtBidAmount.Text))
+                    {
+                        lblBidState.Text = "Buddet skal være højere end det forrige!";
+                    }
+                    else
+                    {
+                        CtrMember.MemberBidState state = ctrAuc.InsertBid(m.Id, Convert.ToDecimal(txtBidAmount.Text), a.Id);
+
+                        if (state == CtrMember.MemberBidState.BidConfirmed)
+                        {
+                            lblBidState.Text = "Bud accepteret!";
+                            previosBidder = m;
+                            previousBid = Convert.ToDecimal(txtBidAmount.Text);
+                            populatebids(a.Number);
+                        }
+                        if (state == CtrMember.MemberBidState.BidError)
+                        {
+                            lblBidState.Text = "Bud blev ikke accepteret!";
+                        }
+                    }
+                }
+            }
+
+            else
+            {
+                if (currentArt.StartingBid > Convert.ToDecimal(txtBidAmount.Text))
+                {
+                    lblBidState.Text = "Buddet er mindre end startsprisen!";
+
+                }
+                else if (previousBid > Convert.ToDecimal(txtBidAmount.Text))
+                {
+                    lblBidState.Text = "Buddet skal være højere end det forrige!";
+                }
+                else
+                {
+                    CtrMember.MemberBidState state = ctrAuc.InsertBid(m.Id, Convert.ToDecimal(txtBidAmount.Text), a.Id);
+
+                    if (state == CtrMember.MemberBidState.BidConfirmed)
+                    {
+                        lblBidState.Text = "Bud accepteret!";
+                        previosBidder = m;
+                        previousBid = Convert.ToDecimal(txtBidAmount.Text);
+                        populatebids(a.Number);
+                    }
+                    if (state == CtrMember.MemberBidState.BidError)
+                    {
+                        lblBidState.Text = "Bud blev ikke accepteret!";
+                    }
+                }
+
+            }
 
         }
     }

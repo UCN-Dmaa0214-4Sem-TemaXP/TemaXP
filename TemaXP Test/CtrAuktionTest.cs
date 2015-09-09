@@ -83,9 +83,38 @@ namespace TemaXP_Test
         {
             Console.Out.WriteLine("TestRetrieveBidsByArt called");
 
-            List<Bid> bCollection = ctrAuction.RetrieveBidsByArt(new CtrArt().RetrieveByNo(1020));
+            CtrArt ctrArt = new CtrArt();
+            Art a = ctrArt.RetrieveByNo(1020);
+            List<Bid> bCollection = ctrAuction.RetrieveBidsByArt(a);
 
             Assert.IsNotNull(bCollection);
+
+            foreach (var item in bCollection)
+            {
+                Console.Out.WriteLine();
+                Console.Out.Write("Art Name {0}, Member Name {1}", item.Art.Name, item.Member.FirstName);
+                Console.Out.WriteLine();
+            }
+        }
+
+        [TestMethod]
+        public void TestInsertBid()
+        {
+            CtrMember ctrMem = new CtrMember();
+            CtrArt ctrArt = new CtrArt();
+
+
+            Art a = ctrArt.RetrieveByNo(1410);
+            Member m = ctrMem.RetrieveSingleByID(1);
+
+            CtrMember.MemberBidState state = ctrAuction.InsertBid(m.Id, 9000, a.Id);
+
+            if (state == CtrMember.MemberBidState.BidConfirmed)
+            {
+                Console.WriteLine(ctrMem.WithdrawAmount(m.Id, 9000));
+            }
+
+            Console.WriteLine(state);
         }
     }
 }

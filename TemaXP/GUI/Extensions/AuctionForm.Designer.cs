@@ -33,16 +33,6 @@
             this.dgvArts = new System.Windows.Forms.DataGridView();
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Artist = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblArtID = new System.Windows.Forms.Label();
-            this.dgvBids = new System.Windows.Forms.DataGridView();
-            this.txtMember = new System.Windows.Forms.TextBox();
-            this.txtBidAmount = new System.Windows.Forms.TextBox();
-            this.btnBid = new System.Windows.Forms.Button();
-            this.lblMemberNo = new System.Windows.Forms.Label();
-            this.lblBidAmount = new System.Windows.Forms.Label();
-            this.memberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bidAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bidBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,10 +45,18 @@
             this.auctionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.auctionIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblArtID = new System.Windows.Forms.Label();
+            this.txtMember = new System.Windows.Forms.TextBox();
+            this.txtBidAmount = new System.Windows.Forms.TextBox();
+            this.btnBid = new System.Windows.Forms.Button();
+            this.lblMemberNo = new System.Windows.Forms.Label();
+            this.lblBidAmount = new System.Windows.Forms.Label();
+            this.txtBids = new System.Windows.Forms.TextBox();
+            this.bidBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblBidState = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBids)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bidBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bidBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -93,13 +91,13 @@
             this.auctionIdDataGridViewTextBoxColumn});
             this.dgvArts.DataSource = this.artBindingSource;
             this.dgvArts.Location = new System.Drawing.Point(16, 70);
+            this.dgvArts.MultiSelect = false;
             this.dgvArts.Name = "dgvArts";
             this.dgvArts.ReadOnly = true;
+            this.dgvArts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArts.Size = new System.Drawing.Size(344, 483);
             this.dgvArts.TabIndex = 1;
             this.dgvArts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArts_CellContentClick);
-            this.dgvArts.MultiSelect = false;
-            this.dgvArts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             // 
             // Number
             // 
@@ -114,91 +112,6 @@
             this.Artist.HeaderText = "Artist";
             this.Artist.Name = "Artist";
             this.Artist.ReadOnly = true;
-            // 
-            // lblArtID
-            // 
-            this.lblArtID.AutoSize = true;
-            this.lblArtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArtID.Location = new System.Drawing.Point(303, 47);
-            this.lblArtID.Name = "lblArtID";
-            this.lblArtID.Size = new System.Drawing.Size(57, 20);
-            this.lblArtID.TabIndex = 2;
-            this.lblArtID.Text = "label1";
-            // 
-            // dgvBids
-            // 
-            this.dgvBids.AllowUserToAddRows = false;
-            this.dgvBids.AllowUserToDeleteRows = false;
-            this.dgvBids.AutoGenerateColumns = false;
-            this.dgvBids.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBids.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.memberDataGridViewTextBoxColumn,
-            this.bidAmountDataGridViewTextBoxColumn});
-            this.dgvBids.DataSource = this.bidBindingSource;
-            this.dgvBids.Location = new System.Drawing.Point(399, 70);
-            this.dgvBids.Name = "dgvBids";
-            this.dgvBids.ReadOnly = true;
-            this.dgvBids.Size = new System.Drawing.Size(244, 483);
-            this.dgvBids.TabIndex = 3;
-            // 
-            // txtMember
-            // 
-            this.txtMember.Location = new System.Drawing.Point(789, 67);
-            this.txtMember.Name = "txtMember";
-            this.txtMember.Size = new System.Drawing.Size(234, 20);
-            this.txtMember.TabIndex = 4;
-            // 
-            // txtBidAmount
-            // 
-            this.txtBidAmount.Location = new System.Drawing.Point(789, 93);
-            this.txtBidAmount.Name = "txtBidAmount";
-            this.txtBidAmount.Size = new System.Drawing.Size(234, 20);
-            this.txtBidAmount.TabIndex = 4;
-            // 
-            // btnBid
-            // 
-            this.btnBid.Location = new System.Drawing.Point(789, 119);
-            this.btnBid.Name = "btnBid";
-            this.btnBid.Size = new System.Drawing.Size(75, 23);
-            this.btnBid.TabIndex = 5;
-            this.btnBid.Text = "Byd!";
-            this.btnBid.UseVisualStyleBackColor = true;
-            // 
-            // lblMemberNo
-            // 
-            this.lblMemberNo.AutoSize = true;
-            this.lblMemberNo.Location = new System.Drawing.Point(690, 67);
-            this.lblMemberNo.Name = "lblMemberNo";
-            this.lblMemberNo.Size = new System.Drawing.Size(61, 13);
-            this.lblMemberNo.TabIndex = 6;
-            this.lblMemberNo.Text = "Medlemsnr.";
-            // 
-            // lblBidAmount
-            // 
-            this.lblBidAmount.AutoSize = true;
-            this.lblBidAmount.Location = new System.Drawing.Point(690, 96);
-            this.lblBidAmount.Name = "lblBidAmount";
-            this.lblBidAmount.Size = new System.Drawing.Size(26, 13);
-            this.lblBidAmount.TabIndex = 6;
-            this.lblBidAmount.Text = "Bud";
-            // 
-            // memberDataGridViewTextBoxColumn
-            // 
-            this.memberDataGridViewTextBoxColumn.DataPropertyName = "Member";
-            this.memberDataGridViewTextBoxColumn.HeaderText = "Member";
-            this.memberDataGridViewTextBoxColumn.Name = "memberDataGridViewTextBoxColumn";
-            this.memberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bidAmountDataGridViewTextBoxColumn
-            // 
-            this.bidAmountDataGridViewTextBoxColumn.DataPropertyName = "BidAmount";
-            this.bidAmountDataGridViewTextBoxColumn.HeaderText = "BidAmount";
-            this.bidAmountDataGridViewTextBoxColumn.Name = "bidAmountDataGridViewTextBoxColumn";
-            this.bidAmountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bidBindingSource
-            // 
-            this.bidBindingSource.DataSource = typeof(TemaXP.Model.Bid);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -281,26 +194,103 @@
             // 
             this.artBindingSource.DataSource = typeof(TemaXP.Model.Art);
             // 
+            // lblArtID
+            // 
+            this.lblArtID.AutoSize = true;
+            this.lblArtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArtID.Location = new System.Drawing.Point(303, 47);
+            this.lblArtID.Name = "lblArtID";
+            this.lblArtID.Size = new System.Drawing.Size(57, 20);
+            this.lblArtID.TabIndex = 2;
+            this.lblArtID.Text = "label1";
+            // 
+            // txtMember
+            // 
+            this.txtMember.Location = new System.Drawing.Point(789, 67);
+            this.txtMember.Name = "txtMember";
+            this.txtMember.ReadOnly = true;
+            this.txtMember.Size = new System.Drawing.Size(234, 20);
+            this.txtMember.TabIndex = 4;
+            // 
+            // txtBidAmount
+            // 
+            this.txtBidAmount.Location = new System.Drawing.Point(789, 93);
+            this.txtBidAmount.Name = "txtBidAmount";
+            this.txtBidAmount.ReadOnly = true;
+            this.txtBidAmount.Size = new System.Drawing.Size(234, 20);
+            this.txtBidAmount.TabIndex = 4;
+            // 
+            // btnBid
+            // 
+            this.btnBid.Enabled = false;
+            this.btnBid.Location = new System.Drawing.Point(789, 119);
+            this.btnBid.Name = "btnBid";
+            this.btnBid.Size = new System.Drawing.Size(75, 23);
+            this.btnBid.TabIndex = 5;
+            this.btnBid.Text = "Byd!";
+            this.btnBid.UseVisualStyleBackColor = true;
+            this.btnBid.Click += new System.EventHandler(this.btnBid_Click);
+            // 
+            // lblMemberNo
+            // 
+            this.lblMemberNo.AutoSize = true;
+            this.lblMemberNo.Location = new System.Drawing.Point(690, 67);
+            this.lblMemberNo.Name = "lblMemberNo";
+            this.lblMemberNo.Size = new System.Drawing.Size(61, 13);
+            this.lblMemberNo.TabIndex = 6;
+            this.lblMemberNo.Text = "Medlemsnr.";
+            // 
+            // lblBidAmount
+            // 
+            this.lblBidAmount.AutoSize = true;
+            this.lblBidAmount.Location = new System.Drawing.Point(690, 96);
+            this.lblBidAmount.Name = "lblBidAmount";
+            this.lblBidAmount.Size = new System.Drawing.Size(26, 13);
+            this.lblBidAmount.TabIndex = 6;
+            this.lblBidAmount.Text = "Bud";
+            // 
+            // txtBids
+            // 
+            this.txtBids.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBids.Location = new System.Drawing.Point(391, 70);
+            this.txtBids.Multiline = true;
+            this.txtBids.Name = "txtBids";
+            this.txtBids.ReadOnly = true;
+            this.txtBids.Size = new System.Drawing.Size(282, 483);
+            this.txtBids.TabIndex = 7;
+            // 
+            // bidBindingSource
+            // 
+            this.bidBindingSource.DataSource = typeof(TemaXP.Model.Bid);
+            // 
+            // lblBidState
+            // 
+            this.lblBidState.AutoSize = true;
+            this.lblBidState.Location = new System.Drawing.Point(786, 162);
+            this.lblBidState.Name = "lblBidState";
+            this.lblBidState.Size = new System.Drawing.Size(0, 13);
+            this.lblBidState.TabIndex = 8;
+            // 
             // AuctionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 565);
+            this.Controls.Add(this.lblBidState);
+            this.Controls.Add(this.txtBids);
             this.Controls.Add(this.lblBidAmount);
             this.Controls.Add(this.lblMemberNo);
             this.Controls.Add(this.btnBid);
             this.Controls.Add(this.txtBidAmount);
             this.Controls.Add(this.txtMember);
-            this.Controls.Add(this.dgvBids);
             this.Controls.Add(this.lblArtID);
             this.Controls.Add(this.dgvArts);
             this.Controls.Add(this.lblHeader);
             this.Name = "AuctionForm";
             this.Text = "AuctionForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvArts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBids)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bidBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bidBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,11 +302,8 @@
         private System.Windows.Forms.DataGridView dgvArts;
         private System.Windows.Forms.BindingSource artBindingSource;
         private System.Windows.Forms.Label lblArtID;
-        private System.Windows.Forms.DataGridView dgvBids;
         private System.Windows.Forms.DataGridViewTextBoxColumn Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn Artist;
-        private System.Windows.Forms.DataGridViewTextBoxColumn memberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bidAmountDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bidBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateCreatedDataGridViewTextBoxColumn;
@@ -334,5 +321,7 @@
         private System.Windows.Forms.Button btnBid;
         private System.Windows.Forms.Label lblMemberNo;
         private System.Windows.Forms.Label lblBidAmount;
+        private System.Windows.Forms.TextBox txtBids;
+        private System.Windows.Forms.Label lblBidState;
     }
 }
