@@ -27,7 +27,7 @@ namespace TemaXP.GUI.Extensions
         {
             InitializeComponent();
 
-            lblHeader.Text = "Auction nr " + au.Id;
+            lblHeader.Text = "Auktion den " + au.Date;
 
             currentAuction = au;
 
@@ -37,11 +37,11 @@ namespace TemaXP.GUI.Extensions
             dgvArts.DataSource = ctrArt.RetrieveAll(au.Id);
         }
 
-        private void dgvArts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvArts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             currentArt = (Art)dgvArts.CurrentRow.DataBoundItem;
 
-            lblArtID.Text = currentArt.Id.ToString();
+            lblArtBid.Text = "Budgivning: Kunstværk nr. " + currentArt.Number.ToString();
 
             populatebids(currentArt.Number);
         }

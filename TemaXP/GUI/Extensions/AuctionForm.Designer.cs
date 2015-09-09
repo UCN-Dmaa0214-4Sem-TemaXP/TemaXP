@@ -31,20 +31,20 @@
             this.components = new System.ComponentModel.Container();
             this.lblHeader = new System.Windows.Forms.Label();
             this.dgvArts = new System.Windows.Forms.DataGridView();
-            this.artBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblArtID = new System.Windows.Forms.Label();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Artist = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblArtBid = new System.Windows.Forms.Label();
             this.txtMember = new System.Windows.Forms.TextBox();
             this.txtBidAmount = new System.Windows.Forms.TextBox();
             this.btnBid = new System.Windows.Forms.Button();
             this.lblMemberNo = new System.Windows.Forms.Label();
             this.lblBidAmount = new System.Windows.Forms.Label();
             this.txtBids = new System.Windows.Forms.TextBox();
-            this.bidBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblBidState = new System.Windows.Forms.Label();
-            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Artist = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startingBidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bidBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bidBindingSource)).BeginInit();
@@ -54,7 +54,7 @@
             // 
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(16, 11);
+            this.lblHeader.Location = new System.Drawing.Point(16, 9);
             this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(70, 25);
@@ -74,53 +74,66 @@
             this.startingBidDataGridViewTextBoxColumn});
             this.dgvArts.DataSource = this.artBindingSource;
             this.dgvArts.Location = new System.Drawing.Point(21, 86);
-            this.dgvArts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvArts.Margin = new System.Windows.Forms.Padding(4);
             this.dgvArts.MultiSelect = false;
             this.dgvArts.Name = "dgvArts";
             this.dgvArts.ReadOnly = true;
             this.dgvArts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArts.Size = new System.Drawing.Size(459, 594);
+            this.dgvArts.Size = new System.Drawing.Size(570, 594);
             this.dgvArts.TabIndex = 1;
-            this.dgvArts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArts_CellContentClick);
+            this.dgvArts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArts_CellClick);
             // 
-            // artBindingSource
+            // Number
             // 
-            this.artBindingSource.DataSource = typeof(TemaXP.Model.Art);
+            this.Number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Number.DataPropertyName = "Number";
+            this.Number.HeaderText = "Number";
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
+            this.Number.Width = 83;
+            // 
+            // Artist
+            // 
+            this.Artist.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Artist.DataPropertyName = "Artist";
+            this.Artist.HeaderText = "Artist";
+            this.Artist.Name = "Artist";
+            this.Artist.ReadOnly = true;
             // 
             // lblArtID
             // 
-            this.lblArtID.AutoSize = true;
-            this.lblArtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArtID.Location = new System.Drawing.Point(404, 58);
-            this.lblArtID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblArtID.Name = "lblArtID";
-            this.lblArtID.Size = new System.Drawing.Size(70, 25);
-            this.lblArtID.TabIndex = 2;
-            this.lblArtID.Text = "label1";
+            this.lblArtBid.AutoSize = true;
+            this.lblArtBid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArtBid.Location = new System.Drawing.Point(630, 48);
+            this.lblArtBid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblArtBid.Name = "lblArtID";
+            this.lblArtBid.Size = new System.Drawing.Size(126, 25);
+            this.lblArtBid.TabIndex = 2;
+            this.lblArtBid.Text = "Budgivning:";
             // 
             // txtMember
             // 
-            this.txtMember.Location = new System.Drawing.Point(1052, 82);
-            this.txtMember.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMember.Location = new System.Drawing.Point(1145, 82);
+            this.txtMember.Margin = new System.Windows.Forms.Padding(4);
             this.txtMember.Name = "txtMember";
             this.txtMember.ReadOnly = true;
-            this.txtMember.Size = new System.Drawing.Size(311, 22);
+            this.txtMember.Size = new System.Drawing.Size(218, 22);
             this.txtMember.TabIndex = 4;
             // 
             // txtBidAmount
             // 
-            this.txtBidAmount.Location = new System.Drawing.Point(1052, 114);
-            this.txtBidAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBidAmount.Location = new System.Drawing.Point(1145, 114);
+            this.txtBidAmount.Margin = new System.Windows.Forms.Padding(4);
             this.txtBidAmount.Name = "txtBidAmount";
             this.txtBidAmount.ReadOnly = true;
-            this.txtBidAmount.Size = new System.Drawing.Size(311, 22);
+            this.txtBidAmount.Size = new System.Drawing.Size(218, 22);
             this.txtBidAmount.TabIndex = 4;
             // 
             // btnBid
             // 
             this.btnBid.Enabled = false;
-            this.btnBid.Location = new System.Drawing.Point(1052, 146);
-            this.btnBid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBid.Location = new System.Drawing.Point(1145, 144);
+            this.btnBid.Margin = new System.Windows.Forms.Padding(4);
             this.btnBid.Name = "btnBid";
             this.btnBid.Size = new System.Drawing.Size(100, 28);
             this.btnBid.TabIndex = 5;
@@ -131,7 +144,7 @@
             // lblMemberNo
             // 
             this.lblMemberNo.AutoSize = true;
-            this.lblMemberNo.Location = new System.Drawing.Point(920, 82);
+            this.lblMemberNo.Location = new System.Drawing.Point(1056, 82);
             this.lblMemberNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMemberNo.Name = "lblMemberNo";
             this.lblMemberNo.Size = new System.Drawing.Size(81, 17);
@@ -141,7 +154,7 @@
             // lblBidAmount
             // 
             this.lblBidAmount.AutoSize = true;
-            this.lblBidAmount.Location = new System.Drawing.Point(920, 118);
+            this.lblBidAmount.Location = new System.Drawing.Point(1056, 114);
             this.lblBidAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBidAmount.Name = "lblBidAmount";
             this.lblBidAmount.Size = new System.Drawing.Size(33, 17);
@@ -151,17 +164,13 @@
             // txtBids
             // 
             this.txtBids.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBids.Location = new System.Drawing.Point(521, 86);
-            this.txtBids.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBids.Location = new System.Drawing.Point(635, 86);
+            this.txtBids.Margin = new System.Windows.Forms.Padding(4);
             this.txtBids.Multiline = true;
             this.txtBids.Name = "txtBids";
             this.txtBids.ReadOnly = true;
             this.txtBids.Size = new System.Drawing.Size(375, 594);
             this.txtBids.TabIndex = 7;
-            // 
-            // bidBindingSource
-            // 
-            this.bidBindingSource.DataSource = typeof(TemaXP.Model.Bid);
             // 
             // lblBidState
             // 
@@ -172,13 +181,6 @@
             this.lblBidState.Size = new System.Drawing.Size(0, 17);
             this.lblBidState.TabIndex = 8;
             // 
-            // Number
-            // 
-            this.Number.DataPropertyName = "Number";
-            this.Number.HeaderText = "Number";
-            this.Number.Name = "Number";
-            this.Number.ReadOnly = true;
-            // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -187,19 +189,22 @@
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Artist
-            // 
-            this.Artist.DataPropertyName = "Artist";
-            this.Artist.HeaderText = "Artist";
-            this.Artist.Name = "Artist";
-            this.Artist.ReadOnly = true;
-            // 
             // startingBidDataGridViewTextBoxColumn
             // 
+            this.startingBidDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.startingBidDataGridViewTextBoxColumn.DataPropertyName = "StartingBid";
             this.startingBidDataGridViewTextBoxColumn.HeaderText = "StartingBid";
             this.startingBidDataGridViewTextBoxColumn.Name = "startingBidDataGridViewTextBoxColumn";
             this.startingBidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.startingBidDataGridViewTextBoxColumn.Width = 102;
+            // 
+            // artBindingSource
+            // 
+            this.artBindingSource.DataSource = typeof(TemaXP.Model.Art);
+            // 
+            // bidBindingSource
+            // 
+            this.bidBindingSource.DataSource = typeof(TemaXP.Model.Bid);
             // 
             // Budgivning
             // 
@@ -213,10 +218,10 @@
             this.Controls.Add(this.btnBid);
             this.Controls.Add(this.txtBidAmount);
             this.Controls.Add(this.txtMember);
-            this.Controls.Add(this.lblArtID);
+            this.Controls.Add(this.lblArtBid);
             this.Controls.Add(this.dgvArts);
             this.Controls.Add(this.lblHeader);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Budgivning";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AuctionForm";
@@ -233,7 +238,7 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.DataGridView dgvArts;
         private System.Windows.Forms.BindingSource artBindingSource;
-        private System.Windows.Forms.Label lblArtID;
+        private System.Windows.Forms.Label lblArtBid;
         private System.Windows.Forms.BindingSource bidBindingSource;
         private System.Windows.Forms.TextBox txtMember;
         private System.Windows.Forms.TextBox txtBidAmount;
