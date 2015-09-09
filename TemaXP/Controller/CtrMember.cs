@@ -23,5 +23,36 @@ namespace TemaXP.Controller
                 }
             }
         }
+
+        public enum MemberBidState
+        {
+            NotEnough = 0,
+            Verified = 1
+        }
+
+        //public MemberBidState CheckEligibleBid(Member m, int bid)
+        //{
+        //    MemberBidState bidState;
+
+        //    if (m.Points < bid)
+        //    {
+        //        bidState = MemberBidState.NotEnough;
+        //    }
+        //    else (m.Points > bid)
+        //    {
+        //        bidState = MemberBidState.Verified;
+        //    }
+
+        //    if (m.Points > (bid * 3))
+        //    {
+        //        bidState = MemberBidState.NotEnough;
+        //    }
+        //    else
+        //    {
+        //        bidState = MemberBidState.Verified;
+        //    }
+
+        //    return bidState;
+        //}
     }
 }

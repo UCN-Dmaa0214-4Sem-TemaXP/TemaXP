@@ -71,6 +71,30 @@ namespace TemaXP.Controller
             }
         }
 
+        public Art UpdateToAuction(int id, Auction au)
+        {
+            using (AuctionDBContext db = new AuctionDBContext())
+            {
+                Art aTemp = db.Arts.SingleOrDefault(x => x.Id == id);
+
+                aTemp.Auction = au;
+
+                try
+                {
+                    db.Arts.Attach(aTemp);
+                    var entry = db.Entry(aTemp);
+                    entry.State = EntityState.Modified;
+                    db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+
+                return RetrieveById(id);
+            }
+        }
+
         public Art RetrieveById(int id)
         {
             using (AuctionDBContext db = new AuctionDBContext())
@@ -120,11 +144,27 @@ namespace TemaXP.Controller
             }
         }
 
+        public List<Art> RetrieveAll(int auID)
+        {
+            using (AuctionDBContext db = new AuctionDBContext())
+            {
+                try
+                {
+                    return db.Arts.Where(x => x.AuctionId == auID).ToList();
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+            }
+        }
+
         public void DeleteArt(Art art)
         {
             if (art == null)
                 throw new ArgumentNullException("art");
-            using (AuctionDBContext db = new AuctionDBContext()) {
+            using (AuctionDBContext db = new AuctionDBContext())
+            {
                 var dbArt = db.Arts.Single(x => x.Id == art.Id);
 
                 //db.Arts.Attach(art);

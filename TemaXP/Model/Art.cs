@@ -22,5 +22,9 @@ namespace TemaXP.Model
         public virtual List<Bid> Bids { get; set; }
         public virtual Auction Auction { get; set; }
         public int? AuctionId { get; set; }
+
+        public override string ToString() {
+            return string.Format("#{0} - {1}", Number, Name);
+        }
     }
 }

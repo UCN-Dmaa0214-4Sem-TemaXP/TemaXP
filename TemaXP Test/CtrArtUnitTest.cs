@@ -108,5 +108,21 @@ namespace TemaXP_Test
 
             aInsertAgain = ctrArt.Update(aInsertAgain.Id, aInsertAgain.Name, 1020, aInsertAgain.Artist, aInsertAgain.Description, aInsertAgain.Image, aInsertAgain.StartingBid, aInsertAgain.PurchasePrice);
         }
+
+        [TestMethod]
+        public void TestUpdateAuctionArt()
+        {
+            Console.WriteLine("TestUpdateAuctionArt called");
+
+            Auction au = new CtrAuction().RetriveById(22);
+
+            Assert.IsNotNull(au, "is found");
+
+            Art aTemp = ctrArt.RetrieveByNo(1020);
+
+            aTemp = ctrArt.UpdateToAuction(aTemp.Id, au);
+
+            Assert.IsNotNull(aTemp.Auction, "Auction is set");
+        }
     }
 }
