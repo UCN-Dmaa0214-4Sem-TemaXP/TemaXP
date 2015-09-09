@@ -18,7 +18,7 @@ namespace TemaXP.Model.Mapping
             this.Property(x => x.Description).HasMaxLength(300);
             this.Property(x => x.Artist).HasMaxLength(200);
             this.Property(x => x.Name).HasMaxLength(200);
-            this.Property(x => x.Image).HasMaxLength(100);
+            this.Property(x => x.Image).HasMaxLength(500);
             this.HasMany(x => x.Bids);
             this.Property(x => x.Number).HasColumnAnnotation(IndexAnnotation.AnnotationName,
                 new IndexAnnotation(new IndexAttribute("Number"){ IsUnique = true}));
