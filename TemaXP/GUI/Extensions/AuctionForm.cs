@@ -49,7 +49,10 @@ namespace TemaXP.GUI.Extensions
         private void populatebids(int no)
         {
             txtBids.Text = "";
-            List<Bid> bCollection = ctrAuc.RetrieveBidsByArt(ctrArt.RetrieveByNo(no));
+            var art = ctrArt.RetrieveByNo(no);
+            List<Bid> bCollection = ctrAuc.RetrieveBidsByArt(art);
+
+            pictureBox1.ImageLocation = art.Image;
 
             txtBidAmount.ReadOnly = false;
             txtMember.ReadOnly = false;
