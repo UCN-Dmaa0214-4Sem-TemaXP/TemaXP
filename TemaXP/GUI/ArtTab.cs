@@ -22,6 +22,8 @@ namespace TemaXP.GUI
             InitializeComponent();
             txtNumber.Enabled = false;
             cmbSort.SelectedIndex = 0;
+            loadArtPieces();
+            dgvAtrList.ClearSelection();
             
         }
 
@@ -37,8 +39,7 @@ namespace TemaXP.GUI
             //    txt.Clear();
             //},
             clearTxtBoxes();
-            SetHeaderText(true);
-            txtNumber.Enabled = false;
+            
         }
 
         private void btnShowImg_Click(object sender, EventArgs e)
@@ -81,17 +82,31 @@ namespace TemaXP.GUI
             SetTxtCheckForNull(null, txtNumber);
             SetTxtCheckForNull(null, txtName);
             SetTxtCheckForNull(null, txtArtist);
-            SetTxtCheckForNull(null, txtPurchasePrice);
-            SetTxtCheckForNull(null, txtStartPrice);
+            txtPurchasePrice.Text = "0,00";
+            txtStartPrice.Text = "0,00";
             SetTxtCheckForNull(null, txtImgUrl);
             SetTxtCheckForNull(null, txtDescription);
+            txtNumber.Enabled = false;
+            SetHeaderText(true);
+            dgvAtrList.ClearSelection();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtName.Text.Length < 1)
+            if (txtName.Text != "")
             {
-                ctrArt.Insert(txtName.Text, txtArtist.Text, txtDescription.Text, txtImgUrl.Text, Convert.ToDecimal(txtStartPrice.Text), Convert.ToDecimal(txtPurchasePrice.Text));
+                if (grbCreate.Text == "Opret")
+                {
+                    ctrArt.Insert(txtName.Text, txtArtist.Text, txtDescription.Text, txtImgUrl.Text, Convert.ToDecimal(txtStartPrice.Text), Convert.ToDecimal(txtPurchasePrice.Text));
+                }
+                else if (grbCreate.Text == "Rediger")
+                {
+                    Art selectedArt = (Art)dgvAtrList.CurrentRow.DataBoundItem;
+                    int id = selectedArt.Id;
+                    ctrArt.Update(id, txtName.Text, Convert.ToInt32(txtNumber.Text), txtArtist.Text, txtDescription.Text, txtImgUrl.Text, Convert.ToDecimal(txtStartPrice.Text), Convert.ToDecimal(txtPurchasePrice.Text));
+                }
+                loadArtPieces();
+                clearTxtBoxes();
             }
             else
             {
@@ -140,6 +155,12 @@ namespace TemaXP.GUI
             catch
             {
             }
+        }
+
+        private void txtBox_Enter(object sender, EventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+            txt.SelectAll();
         }
 
     }

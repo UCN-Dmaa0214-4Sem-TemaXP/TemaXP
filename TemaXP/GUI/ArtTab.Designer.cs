@@ -153,6 +153,7 @@
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(155, 22);
             this.txtNumber.TabIndex = 2;
+            this.txtNumber.Click += new System.EventHandler(this.txtBox_Enter);
             // 
             // txtName
             // 
@@ -163,6 +164,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(155, 22);
             this.txtName.TabIndex = 3;
+            this.txtName.Click += new System.EventHandler(this.txtBox_Enter);
             // 
             // lblName
             // 
@@ -193,6 +195,7 @@
             this.txtArtist.Name = "txtArtist";
             this.txtArtist.Size = new System.Drawing.Size(155, 22);
             this.txtArtist.TabIndex = 6;
+            this.txtArtist.Click += new System.EventHandler(this.txtBox_Enter);
             // 
             // lblPurchasePrise
             // 
@@ -216,7 +219,10 @@
             this.txtPurchasePrice.TabIndex = 8;
             this.txtPurchasePrice.Text = "0,00";
             this.txtPurchasePrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPurchasePrice.Click += new System.EventHandler(this.txtBox_Enter);
             this.txtPurchasePrice.TextChanged += new System.EventHandler(this.txtPurchasePrice_TextChanged);
+            this.txtPurchasePrice.Enter += new System.EventHandler(this.txtBox_Enter);
+            this.txtPurchasePrice.MouseEnter += new System.EventHandler(this.txtBox_Enter);
             // 
             // txtStartPrice
             // 
@@ -229,6 +235,7 @@
             this.txtStartPrice.TabIndex = 9;
             this.txtStartPrice.Text = "0,00";
             this.txtStartPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtStartPrice.Click += new System.EventHandler(this.txtBox_Enter);
             this.txtStartPrice.TextChanged += new System.EventHandler(this.txtStartPrice_TextChanged);
             // 
             // lblStartPrice
@@ -319,6 +326,7 @@
             this.txtImgUrl.Name = "txtImgUrl";
             this.txtImgUrl.Size = new System.Drawing.Size(107, 22);
             this.txtImgUrl.TabIndex = 2;
+            this.txtImgUrl.Click += new System.EventHandler(this.txtBox_Enter);
             // 
             // lblNo
             // 
