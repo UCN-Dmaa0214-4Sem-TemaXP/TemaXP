@@ -20,11 +20,11 @@ namespace TemaXP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new MainForm());
+            Application.Run(new MainForm());
 
             ///Uncomment to start auctionform
-            Auction au = new CtrAuction().RetriveById(27);
-            Application.Run(new AuctionForm(au));
+            //Auction au = new CtrAuction().RetriveById(27);
+            //Application.Run(new AuctionForm(au));
 
             //using (AuctionDBContext db = new AuctionDBContext())
             //{
