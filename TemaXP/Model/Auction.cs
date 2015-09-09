@@ -13,6 +13,7 @@ namespace TemaXP.Model
         public string Description { get; set; }
         public virtual List<Art> Arts { get; set; }
 
+        public bool IsDone { get; set; }
 
         public void AddArt(Art art) {
             if (art == null)
