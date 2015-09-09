@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TemaXP.Controller;
+using TemaXP.GUI.Extensions;
 using TemaXP.Model;
 
 namespace TemaXP.GUI {
@@ -138,6 +139,12 @@ namespace TemaXP.GUI {
                 }
             }
 
+        }
+
+        private void lbxUpcoming_MouseDoubleClick(object sender, MouseEventArgs e) {
+            if (auction == null) return;
+            AuctionForm form = new AuctionForm(auction);
+            form.ShowDialog(this);
         }
 
 
