@@ -20,5 +20,10 @@ namespace TemaXP.Model
                 throw new ArgumentNullException("art");
             Arts.Add(art);         
         }
+
+        public override string ToString() {
+            return Date.ToString();
+        }
+
     }
 }
