@@ -14,17 +14,31 @@ namespace TemaXP.GUI.Extensions
 {
     public partial class AuctionForm : Form
     {
+        private Auction currentAuction;
+        private CtrArt ctrArt;
+
         public AuctionForm(Auction au)
         {
             InitializeComponent();
 
-            dgvArts.DataSource = new CtrArt().RetrieveAll(au.Id);
+            lblHeader.Text = "Auction nr " + au.Id;
+
+            currentAuction = au;
+
+            ctrArt = new CtrArt();
+
+            dgvArts.DataSource = ctrArt.RetrieveAll(au.Id);
         }
 
         private void dgvArts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var selectedArt = dgvArts.CurrentRow.DataBoundItem;
+            var selectedArt = (Art)dgvArts.CurrentRow.DataBoundItem;
 
+            lblArtID.Text = selectedArt.Id.ToString();
+        }
+
+        private void populatedgvbids()
+        {
 
         }
     }
