@@ -28,7 +28,6 @@
             this.grbCreate = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.lblNo = new System.Windows.Forms.Label();
             this.txtNumber = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
@@ -45,17 +44,18 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnShowImg = new System.Windows.Forms.Button();
             this.txtImgUrl = new System.Windows.Forms.TextBox();
+            this.lblNo = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvAtrList = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.cmbSort = new System.Windows.Forms.ComboBox();
             this.lblSort = new System.Windows.Forms.Label();
-            this.artBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.artBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artistDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.artBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.grbCreate.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -63,8 +63,8 @@
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAtrList)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.artBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -132,6 +132,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(251, 383);
             this.tableLayoutPanel2.TabIndex = 2;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // btnCancel
             // 
@@ -143,16 +144,6 @@
             this.btnCancel.Text = "Annuller";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // lblNo
-            // 
-            this.lblNo.AutoSize = true;
-            this.lblNo.Location = new System.Drawing.Point(4, 0);
-            this.lblNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNo.Name = "lblNo";
-            this.lblNo.Size = new System.Drawing.Size(23, 17);
-            this.lblNo.TabIndex = 1;
-            this.lblNo.Text = "Nr";
             // 
             // txtNumber
             // 
@@ -218,11 +209,15 @@
             // 
             this.txtPurchasePrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPurchasePrice.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.artBindingSource1, "PurchasePrice", true));
             this.txtPurchasePrice.Location = new System.Drawing.Point(92, 94);
             this.txtPurchasePrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtPurchasePrice.Name = "txtPurchasePrice";
             this.txtPurchasePrice.Size = new System.Drawing.Size(155, 22);
             this.txtPurchasePrice.TabIndex = 8;
+            this.txtPurchasePrice.Text = "0,00";
+            this.txtPurchasePrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPurchasePrice.TextChanged += new System.EventHandler(this.txtPurchasePrice_TextChanged);
             // 
             // txtStartPrice
             // 
@@ -233,6 +228,9 @@
             this.txtStartPrice.Name = "txtStartPrice";
             this.txtStartPrice.Size = new System.Drawing.Size(155, 22);
             this.txtStartPrice.TabIndex = 9;
+            this.txtStartPrice.Text = "0,00";
+            this.txtStartPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtStartPrice.TextChanged += new System.EventHandler(this.txtStartPrice_TextChanged);
             // 
             // lblStartPrice
             // 
@@ -284,6 +282,7 @@
             this.btnSave.TabIndex = 15;
             this.btnSave.Text = "Gem";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -322,6 +321,16 @@
             this.txtImgUrl.Size = new System.Drawing.Size(107, 22);
             this.txtImgUrl.TabIndex = 2;
             // 
+            // lblNo
+            // 
+            this.lblNo.AutoSize = true;
+            this.lblNo.Location = new System.Drawing.Point(4, 0);
+            this.lblNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNo.Name = "lblNo";
+            this.lblNo.Size = new System.Drawing.Size(23, 17);
+            this.lblNo.TabIndex = 1;
+            this.lblNo.Text = "Nr";
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
@@ -353,12 +362,13 @@
             this.dgvAtrList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAtrList.Location = new System.Drawing.Point(4, 44);
             this.dgvAtrList.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvAtrList.MultiSelect = false;
             this.dgvAtrList.Name = "dgvAtrList";
             this.dgvAtrList.ReadOnly = true;
             this.dgvAtrList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAtrList.Size = new System.Drawing.Size(522, 358);
             this.dgvAtrList.TabIndex = 1;
-            this.dgvAtrList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAtrList_CellContentClick);
+            this.dgvAtrList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAtrList_CellClick);
             // 
             // tableLayoutPanel5
             // 
@@ -402,9 +412,9 @@
             this.lblSort.TabIndex = 1;
             this.lblSort.Text = "Sorter";
             // 
-            // artBindingSource
+            // artBindingSource1
             // 
-            this.artBindingSource.DataSource = typeof(TemaXP.Model.Art);
+            this.artBindingSource1.DataSource = typeof(TemaXP.Model.Art);
             // 
             // numberDataGridViewTextBoxColumn
             // 
@@ -435,9 +445,9 @@
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // artBindingSource1
+            // artBindingSource
             // 
-            this.artBindingSource1.DataSource = typeof(TemaXP.Model.Art);
+            this.artBindingSource.DataSource = typeof(TemaXP.Model.Art);
             // 
             // ArtTab
             // 
@@ -457,8 +467,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAtrList)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.artBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
