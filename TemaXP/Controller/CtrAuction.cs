@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Core;
 using System.Data.Entity.Migrations;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -98,6 +99,16 @@ namespace TemaXP.Controller {
             }
             return auction;
         }
+
+        public List<Auction> GetAll(bool isDone) {
+
+            List<Auction> auctionList = new List<Auction>();
+
+            using (AuctionDBContext db = new AuctionDBContext()) {
+                auctionList = db.Auktions.Include(x => x.Arts).Where(x => x.IsDone == isDone).ToList();
+            }
+            return auctionList;
+        } 
 
     }
 }
