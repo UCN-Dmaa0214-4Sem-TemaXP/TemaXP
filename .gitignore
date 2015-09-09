@@ -197,3 +197,4 @@ FakesAssemblies/
 TemaXP/Program.cs
 TemaXP/GUI/ArtTab.Designer.cs
 TemaXP/GUI/ArtTab.Designer.cs
+TemaXP/GUI/Extensions/AuctionForm.cs

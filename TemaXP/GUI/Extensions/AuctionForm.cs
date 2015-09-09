@@ -99,6 +99,10 @@ namespace TemaXP.GUI.Extensions
                         {
                             lblBidState.Text = "Bud blev ikke accepteret!";
                         }
+                        if (state == CtrMember.MemberBidState.NotEnough)
+                        {
+                            lblBidState.Text = "Bud blev ikke accepteret!";
+                        }
                     }
                 }
             }
@@ -110,7 +114,7 @@ namespace TemaXP.GUI.Extensions
                     lblBidState.Text = "Buddet er mindre end startsprisen!";
 
                 }
-                else if (previousBid > Convert.ToDecimal(txtBidAmount.Text))
+                else if (previousBid >= Convert.ToDecimal(txtBidAmount.Text))
                 {
                     lblBidState.Text = "Buddet skal være højere end det forrige!";
                 }
@@ -126,6 +130,10 @@ namespace TemaXP.GUI.Extensions
                         populatebids(a.Number);
                     }
                     if (state == CtrMember.MemberBidState.BidError)
+                    {
+                        lblBidState.Text = "Bud blev ikke accepteret!";
+                    }
+                    if (state == CtrMember.MemberBidState.NotEnough)
                     {
                         lblBidState.Text = "Bud blev ikke accepteret!";
                     }
