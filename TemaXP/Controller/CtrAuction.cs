@@ -125,7 +125,7 @@ namespace TemaXP.Controller
             List<Auction> auctionList = new List<Auction>();
 
             using (AuctionDBContext db = new AuctionDBContext()) {
-                auctionList = db.Auktions.Include(x => x.Arts).Where(x => x.IsDone == isDone).ToList();
+                auctionList = db.Auktions.Include(x => x.Arts).Where(x => x.IsDone == isDone).OrderByDescending(x => x.Date).ToList();
             }
             return auctionList;
         } 
@@ -137,7 +137,7 @@ namespace TemaXP.Controller
             {
                 try
                 {
-                    bCollection = db.Bids.Include(x => x.Member).Where(x => x.Art.Id == a.Id).ToList();
+                    bCollection = db.Bids.Include(x => x.Member).Where(x => x.Art.Id == a.Id).OrderByDescending(x => x.DateTime).ToList();
                 }
                 catch (Exception e)
                 {
